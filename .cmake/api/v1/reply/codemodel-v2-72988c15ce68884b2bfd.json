@@ -1,0 +1,328 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						2,
+						3,
+						4
+					],
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16.0"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						5
+					]
+				},
+				{
+					"build" : "NCLCoreClasses",
+					"jsonFile" : "directory-NCLCoreClasses-Debug-f2db015ae7922231cd93.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "NCLCoreClasses",
+					"targetIndexes" : 
+					[
+						3
+					]
+				},
+				{
+					"build" : "CSC8503CoreClasses",
+					"jsonFile" : "directory-CSC8503CoreClasses-Debug-2ee4de21ed7b040fd2ce.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "CSC8503CoreClasses",
+					"targetIndexes" : 
+					[
+						2
+					]
+				},
+				{
+					"build" : "OpenGLRendering",
+					"jsonFile" : "directory-OpenGLRendering-Debug-7bfd441e8506152ad447.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "OpenGLRendering",
+					"targetIndexes" : 
+					[
+						4
+					]
+				},
+				{
+					"build" : "CSC8503",
+					"jsonFile" : "directory-CSC8503-Debug-89b15dcb0e707ea3be12.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "CSC8503",
+					"targetIndexes" : 
+					[
+						1
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4
+					],
+					"name" : "CSC8503",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ALL_BUILD::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ALL_BUILD-Debug-e0a6463fa4243124d030.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "CSC8503::@6219ac6a3c5e7ef5b3a0",
+					"jsonFile" : "target-CSC8503-Debug-aceaac5635a4888215bb.json",
+					"name" : "CSC8503",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "CSC8503CoreClasses::@4d875e53a28d04205b4e",
+					"jsonFile" : "target-CSC8503CoreClasses-Debug-f8ae6c2b6e8588f3d946.json",
+					"name" : "CSC8503CoreClasses",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "NCLCoreClasses::@d19657c61aeecf4bdae3",
+					"jsonFile" : "target-NCLCoreClasses-Debug-f446ad39a8e02bfc3b2f.json",
+					"name" : "NCLCoreClasses",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "OpenGLRendering::@33dc503a5a1af3fe7d7b",
+					"jsonFile" : "target-OpenGLRendering-Debug-35b5ec26e300ef72584a.json",
+					"name" : "OpenGLRendering",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ZERO_CHECK-Debug-2b6a2f88003b80707e6e.json",
+					"name" : "ZERO_CHECK",
+					"projectIndex" : 0
+				}
+			]
+		},
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						2,
+						3,
+						4
+					],
+					"jsonFile" : "directory-.-Release-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16.0"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						5
+					]
+				},
+				{
+					"build" : "NCLCoreClasses",
+					"jsonFile" : "directory-NCLCoreClasses-Release-f2db015ae7922231cd93.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "NCLCoreClasses",
+					"targetIndexes" : 
+					[
+						3
+					]
+				},
+				{
+					"build" : "CSC8503CoreClasses",
+					"jsonFile" : "directory-CSC8503CoreClasses-Release-2ee4de21ed7b040fd2ce.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "CSC8503CoreClasses",
+					"targetIndexes" : 
+					[
+						2
+					]
+				},
+				{
+					"build" : "OpenGLRendering",
+					"jsonFile" : "directory-OpenGLRendering-Release-7bfd441e8506152ad447.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "OpenGLRendering",
+					"targetIndexes" : 
+					[
+						4
+					]
+				},
+				{
+					"build" : "CSC8503",
+					"jsonFile" : "directory-CSC8503-Release-89b15dcb0e707ea3be12.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "CSC8503",
+					"targetIndexes" : 
+					[
+						1
+					]
+				}
+			],
+			"name" : "Release",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4
+					],
+					"name" : "CSC8503",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ALL_BUILD::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ALL_BUILD-Release-e0a6463fa4243124d030.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "CSC8503::@6219ac6a3c5e7ef5b3a0",
+					"jsonFile" : "target-CSC8503-Release-4d354ba8c0222b144f98.json",
+					"name" : "CSC8503",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "CSC8503CoreClasses::@4d875e53a28d04205b4e",
+					"jsonFile" : "target-CSC8503CoreClasses-Release-b7265a96f2d39bbd3898.json",
+					"name" : "CSC8503CoreClasses",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "NCLCoreClasses::@d19657c61aeecf4bdae3",
+					"jsonFile" : "target-NCLCoreClasses-Release-5c1ad5f4b5d7c1625fa5.json",
+					"name" : "NCLCoreClasses",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "OpenGLRendering::@33dc503a5a1af3fe7d7b",
+					"jsonFile" : "target-OpenGLRendering-Release-7b88802afc0d8e157567.json",
+					"name" : "OpenGLRendering",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ZERO_CHECK-Release-2b6a2f88003b80707e6e.json",
+					"name" : "ZERO_CHECK",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Tutorials",
+		"source" : "C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Tutorials"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}

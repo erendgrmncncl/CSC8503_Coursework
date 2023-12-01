@@ -1,0 +1,811 @@
+{
+	"artifacts" : 
+	[
+		{
+			"path" : "x64/Release/CSC8503.exe"
+		},
+		{
+			"path" : "x64/Release/CSC8503.pdb"
+		}
+	],
+	"backtrace" : 1,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_executable",
+			"target_link_options",
+			"target_link_libraries",
+			"target_compile_options",
+			"add_compile_definitions",
+			"target_compile_definitions",
+			"include_directories",
+			"target_precompile_headers"
+		],
+		"files" : 
+		[
+			"CSC8503/CMakeLists.txt",
+			"CSC8503CoreClasses/CMakeLists.txt",
+			"OpenGLRendering/CMakeLists.txt",
+			"CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 96,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 191,
+				"parent" : 0
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 203,
+				"parent" : 0
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 210,
+				"parent" : 0
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 211,
+				"parent" : 0
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 212,
+				"parent" : 0
+			},
+			{
+				"file" : 1
+			},
+			{
+				"command" : 2,
+				"file" : 1,
+				"line" : 209,
+				"parent" : 7
+			},
+			{
+				"file" : 2
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 84,
+				"parent" : 9
+			},
+			{
+				"command" : 3,
+				"file" : 0,
+				"line" : 178,
+				"parent" : 0
+			},
+			{
+				"file" : 3
+			},
+			{
+				"command" : 4,
+				"file" : 3,
+				"line" : 61,
+				"parent" : 12
+			},
+			{
+				"command" : 4,
+				"file" : 3,
+				"line" : 70,
+				"parent" : 12
+			},
+			{
+				"command" : 5,
+				"file" : 0,
+				"line" : 112,
+				"parent" : 0
+			},
+			{
+				"command" : 6,
+				"file" : 0,
+				"line" : 206,
+				"parent" : 0
+			},
+			{
+				"command" : 6,
+				"file" : 0,
+				"line" : 207,
+				"parent" : 0
+			},
+			{
+				"command" : 6,
+				"file" : 0,
+				"line" : 208,
+				"parent" : 0
+			},
+			{
+				"command" : 7,
+				"file" : 0,
+				"line" : 122,
+				"parent" : 0
+			}
+		]
+	},
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "/DWIN32 /D_WINDOWS /GR /EHsc /O2 /Ob2 /DNDEBUG -std:c++latest -MD /GL"
+				},
+				{
+					"backtrace" : 11,
+					"fragment" : "/Oi"
+				},
+				{
+					"backtrace" : 11,
+					"fragment" : "/Gy"
+				},
+				{
+					"backtrace" : 11,
+					"fragment" : "/permissive-"
+				},
+				{
+					"backtrace" : 11,
+					"fragment" : "/std:c++latest"
+				},
+				{
+					"backtrace" : 11,
+					"fragment" : "/sdl"
+				},
+				{
+					"backtrace" : 11,
+					"fragment" : "/W3"
+				},
+				{
+					"backtrace" : 11,
+					"fragment" : "/Zi"
+				},
+				{
+					"backtrace" : 11,
+					"fragment" : "/EHsc"
+				},
+				{
+					"backtrace" : 11,
+					"fragment" : "/Y-"
+				},
+				{
+					"fragment" : "/YcC:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Tutorials/CSC8503/CMakeFiles/CSC8503.dir/Release/cmake_pch.hxx /FpC:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Tutorials/CSC8503/CSC8503.dir/Release/cmake_pch.pch /FIC:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Tutorials/CSC8503/CMakeFiles/CSC8503.dir/Release/cmake_pch.hxx"
+				}
+			],
+			"defines" : 
+			[
+				{
+					"backtrace" : 13,
+					"define" : "ASSETROOTLOCATION=\"C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Tutorials/Assets/\""
+				},
+				{
+					"backtrace" : 14,
+					"define" : "NOMINMAX"
+				},
+				{
+					"backtrace" : 15,
+					"define" : "UNICODE"
+				},
+				{
+					"backtrace" : 15,
+					"define" : "WIN32_LEAN_AND_MEAN"
+				},
+				{
+					"backtrace" : 15,
+					"define" : "_UNICODE"
+				},
+				{
+					"backtrace" : 15,
+					"define" : "_WINSOCK2API_"
+				},
+				{
+					"backtrace" : 15,
+					"define" : "_WINSOCKAPI_"
+				},
+				{
+					"backtrace" : 15,
+					"define" : "_WINSOCK_DEPRECATED_NO_WARNINGS"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 16,
+					"path" : "C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Tutorials/CSC8503/../OpenGLRendering"
+				},
+				{
+					"backtrace" : 17,
+					"path" : "C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Tutorials/CSC8503/../NCLCoreClasses"
+				},
+				{
+					"backtrace" : 18,
+					"path" : "C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Tutorials/CSC8503/../CSC8503CoreClasses"
+				},
+				{
+					"backtrace" : 6,
+					"path" : "C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Tutorials/NCLCoreClasses"
+				},
+				{
+					"backtrace" : 6,
+					"path" : "C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Tutorials/OpenGLRendering"
+				}
+			],
+			"language" : "CXX",
+			"languageStandard" : 
+			{
+				"backtraces" : 
+				[
+					1
+				],
+				"standard" : "23"
+			},
+			"precompileHeaders" : 
+			[
+				{
+					"backtrace" : 19,
+					"header" : "<vector>"
+				},
+				{
+					"backtrace" : 19,
+					"header" : "<map>"
+				},
+				{
+					"backtrace" : 19,
+					"header" : "<stack>"
+				},
+				{
+					"backtrace" : 19,
+					"header" : "<list>"
+				},
+				{
+					"backtrace" : 19,
+					"header" : "<set>"
+				},
+				{
+					"backtrace" : 19,
+					"header" : "<string>"
+				},
+				{
+					"backtrace" : 19,
+					"header" : "<thread>"
+				},
+				{
+					"backtrace" : 19,
+					"header" : "<atomic>"
+				},
+				{
+					"backtrace" : 19,
+					"header" : "<functional>"
+				},
+				{
+					"backtrace" : 19,
+					"header" : "<iostream>"
+				},
+				{
+					"backtrace" : 19,
+					"header" : "<chrono>"
+				},
+				{
+					"backtrace" : 19,
+					"header" : "<sstream>"
+				},
+				{
+					"backtrace" : 19,
+					"header" : "C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Tutorials/CSC8503/../NCLCoreClasses/Vector2i.h"
+				},
+				{
+					"backtrace" : 19,
+					"header" : "C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Tutorials/CSC8503/../NCLCoreClasses/Vector3i.h"
+				},
+				{
+					"backtrace" : 19,
+					"header" : "C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Tutorials/CSC8503/../NCLCoreClasses/Vector4i.h"
+				},
+				{
+					"backtrace" : 19,
+					"header" : "C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Tutorials/CSC8503/../NCLCoreClasses/Vector2.h"
+				},
+				{
+					"backtrace" : 19,
+					"header" : "C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Tutorials/CSC8503/../NCLCoreClasses/Vector3.h"
+				},
+				{
+					"backtrace" : 19,
+					"header" : "C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Tutorials/CSC8503/../NCLCoreClasses/Vector4.h"
+				},
+				{
+					"backtrace" : 19,
+					"header" : "C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Tutorials/CSC8503/../NCLCoreClasses/Quaternion.h"
+				},
+				{
+					"backtrace" : 19,
+					"header" : "C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Tutorials/CSC8503/../NCLCoreClasses/Plane.h"
+				},
+				{
+					"backtrace" : 19,
+					"header" : "C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Tutorials/CSC8503/../NCLCoreClasses/Matrix2.h"
+				},
+				{
+					"backtrace" : 19,
+					"header" : "C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Tutorials/CSC8503/../NCLCoreClasses/Matrix3.h"
+				},
+				{
+					"backtrace" : 19,
+					"header" : "C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Tutorials/CSC8503/../NCLCoreClasses/Matrix4.h"
+				},
+				{
+					"backtrace" : 19,
+					"header" : "C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Tutorials/CSC8503/../NCLCoreClasses/GameTimer.h"
+				}
+			],
+			"sourceIndexes" : 
+			[
+				0
+			]
+		},
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "/DWIN32 /D_WINDOWS /GR /EHsc /O2 /Ob2 /DNDEBUG -std:c++latest -MD /GL"
+				},
+				{
+					"backtrace" : 11,
+					"fragment" : "/Oi"
+				},
+				{
+					"backtrace" : 11,
+					"fragment" : "/Gy"
+				},
+				{
+					"backtrace" : 11,
+					"fragment" : "/permissive-"
+				},
+				{
+					"backtrace" : 11,
+					"fragment" : "/std:c++latest"
+				},
+				{
+					"backtrace" : 11,
+					"fragment" : "/sdl"
+				},
+				{
+					"backtrace" : 11,
+					"fragment" : "/W3"
+				},
+				{
+					"backtrace" : 11,
+					"fragment" : "/Zi"
+				},
+				{
+					"backtrace" : 11,
+					"fragment" : "/EHsc"
+				},
+				{
+					"backtrace" : 11,
+					"fragment" : "/Y-"
+				},
+				{
+					"fragment" : "/YuC:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Tutorials/CSC8503/CMakeFiles/CSC8503.dir/Release/cmake_pch.hxx /FpC:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Tutorials/CSC8503/CSC8503.dir/Release/cmake_pch.pch /FIC:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Tutorials/CSC8503/CMakeFiles/CSC8503.dir/Release/cmake_pch.hxx"
+				}
+			],
+			"defines" : 
+			[
+				{
+					"backtrace" : 13,
+					"define" : "ASSETROOTLOCATION=\"C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Tutorials/Assets/\""
+				},
+				{
+					"backtrace" : 14,
+					"define" : "NOMINMAX"
+				},
+				{
+					"backtrace" : 15,
+					"define" : "UNICODE"
+				},
+				{
+					"backtrace" : 15,
+					"define" : "WIN32_LEAN_AND_MEAN"
+				},
+				{
+					"backtrace" : 15,
+					"define" : "_UNICODE"
+				},
+				{
+					"backtrace" : 15,
+					"define" : "_WINSOCK2API_"
+				},
+				{
+					"backtrace" : 15,
+					"define" : "_WINSOCKAPI_"
+				},
+				{
+					"backtrace" : 15,
+					"define" : "_WINSOCK_DEPRECATED_NO_WARNINGS"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 16,
+					"path" : "C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Tutorials/CSC8503/../OpenGLRendering"
+				},
+				{
+					"backtrace" : 17,
+					"path" : "C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Tutorials/CSC8503/../NCLCoreClasses"
+				},
+				{
+					"backtrace" : 18,
+					"path" : "C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Tutorials/CSC8503/../CSC8503CoreClasses"
+				},
+				{
+					"backtrace" : 6,
+					"path" : "C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Tutorials/NCLCoreClasses"
+				},
+				{
+					"backtrace" : 6,
+					"path" : "C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Tutorials/OpenGLRendering"
+				}
+			],
+			"language" : "CXX",
+			"languageStandard" : 
+			{
+				"backtraces" : 
+				[
+					1
+				],
+				"standard" : "23"
+			},
+			"precompileHeaders" : 
+			[
+				{
+					"backtrace" : 19,
+					"header" : "<vector>"
+				},
+				{
+					"backtrace" : 19,
+					"header" : "<map>"
+				},
+				{
+					"backtrace" : 19,
+					"header" : "<stack>"
+				},
+				{
+					"backtrace" : 19,
+					"header" : "<list>"
+				},
+				{
+					"backtrace" : 19,
+					"header" : "<set>"
+				},
+				{
+					"backtrace" : 19,
+					"header" : "<string>"
+				},
+				{
+					"backtrace" : 19,
+					"header" : "<thread>"
+				},
+				{
+					"backtrace" : 19,
+					"header" : "<atomic>"
+				},
+				{
+					"backtrace" : 19,
+					"header" : "<functional>"
+				},
+				{
+					"backtrace" : 19,
+					"header" : "<iostream>"
+				},
+				{
+					"backtrace" : 19,
+					"header" : "<chrono>"
+				},
+				{
+					"backtrace" : 19,
+					"header" : "<sstream>"
+				},
+				{
+					"backtrace" : 19,
+					"header" : "C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Tutorials/CSC8503/../NCLCoreClasses/Vector2i.h"
+				},
+				{
+					"backtrace" : 19,
+					"header" : "C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Tutorials/CSC8503/../NCLCoreClasses/Vector3i.h"
+				},
+				{
+					"backtrace" : 19,
+					"header" : "C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Tutorials/CSC8503/../NCLCoreClasses/Vector4i.h"
+				},
+				{
+					"backtrace" : 19,
+					"header" : "C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Tutorials/CSC8503/../NCLCoreClasses/Vector2.h"
+				},
+				{
+					"backtrace" : 19,
+					"header" : "C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Tutorials/CSC8503/../NCLCoreClasses/Vector3.h"
+				},
+				{
+					"backtrace" : 19,
+					"header" : "C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Tutorials/CSC8503/../NCLCoreClasses/Vector4.h"
+				},
+				{
+					"backtrace" : 19,
+					"header" : "C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Tutorials/CSC8503/../NCLCoreClasses/Quaternion.h"
+				},
+				{
+					"backtrace" : 19,
+					"header" : "C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Tutorials/CSC8503/../NCLCoreClasses/Plane.h"
+				},
+				{
+					"backtrace" : 19,
+					"header" : "C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Tutorials/CSC8503/../NCLCoreClasses/Matrix2.h"
+				},
+				{
+					"backtrace" : 19,
+					"header" : "C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Tutorials/CSC8503/../NCLCoreClasses/Matrix3.h"
+				},
+				{
+					"backtrace" : 19,
+					"header" : "C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Tutorials/CSC8503/../NCLCoreClasses/Matrix4.h"
+				},
+				{
+					"backtrace" : 19,
+					"header" : "C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Tutorials/CSC8503/../NCLCoreClasses/GameTimer.h"
+				}
+			],
+			"sourceIndexes" : 
+			[
+				7,
+				8,
+				9,
+				10,
+				11,
+				12,
+				13
+			]
+		}
+	],
+	"dependencies" : 
+	[
+		{
+			"backtrace" : 6,
+			"id" : "OpenGLRendering::@33dc503a5a1af3fe7d7b"
+		},
+		{
+			"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "NCLCoreClasses::@d19657c61aeecf4bdae3"
+		},
+		{
+			"backtrace" : 5,
+			"id" : "CSC8503CoreClasses::@4d875e53a28d04205b4e"
+		}
+	],
+	"id" : "CSC8503::@6219ac6a3c5e7ef5b3a0",
+	"link" : 
+	{
+		"commandFragments" : 
+		[
+			{
+				"fragment" : "/DWIN32 /D_WINDOWS /GR /EHsc /O2 /Ob2 /DNDEBUG -MD /GL",
+				"role" : "flags"
+			},
+			{
+				"fragment" : "/machine:x64 /INCREMENTAL:NO /subsystem:console",
+				"role" : "flags"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "/OPT:REF",
+				"role" : "flags"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "/OPT:ICF",
+				"role" : "flags"
+			},
+			{
+				"fragment" : "/INCREMENTAL:NO /LTCG",
+				"role" : "flags"
+			},
+			{
+				"backtrace" : 3,
+				"fragment" : "Winmm.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "..\\NCLCoreClasses\\Release\\NCLCoreClasses.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "..\\x64\\Release\\CSC8503CoreClasses.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 6,
+				"fragment" : "..\\OpenGLRendering\\Release\\OpenGLRendering.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 8,
+				"fragment" : "ws2_32.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "..\\NCLCoreClasses\\Release\\NCLCoreClasses.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 10,
+				"fragment" : "opengl32.lib",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib",
+				"role" : "libraries"
+			}
+		],
+		"language" : "CXX",
+		"lto" : true
+	},
+	"name" : "CSC8503",
+	"nameOnDisk" : "CSC8503.exe",
+	"paths" : 
+	{
+		"build" : "CSC8503",
+		"source" : "CSC8503"
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				0,
+				7,
+				8,
+				9,
+				10,
+				11,
+				12,
+				13
+			]
+		},
+		{
+			"name" : "Header Files",
+			"sourceIndexes" : 
+			[
+				1,
+				2,
+				3,
+				4,
+				5,
+				6
+			]
+		},
+		{
+			"name" : "Precompile Header File",
+			"sourceIndexes" : 
+			[
+				14,
+				15
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 0,
+			"compileGroupIndex" : 0,
+			"path" : "CSC8503/CMakeFiles/CSC8503.dir/cmake_pch.cxx",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "CSC8503/GameTechRenderer.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "CSC8503/NetworkedGame.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "CSC8503/NetworkPlayer.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "CSC8503/StateGameObject.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "CSC8503/TutorialGame.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "CSC8503/Coursework.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "CSC8503/GameTechRenderer.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "CSC8503/Main.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "CSC8503/NetworkedGame.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "CSC8503/NetworkPlayer.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "CSC8503/StateGameObject.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "CSC8503/TutorialGame.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "CSC8503/Coursework.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 0,
+			"path" : "CSC8503/CMakeFiles/CSC8503.dir/Debug/cmake_pch.hxx",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 0,
+			"path" : "CSC8503/CMakeFiles/CSC8503.dir/Release/cmake_pch.hxx",
+			"sourceGroupIndex" : 2
+		}
+	],
+	"type" : "EXECUTABLE"
+}

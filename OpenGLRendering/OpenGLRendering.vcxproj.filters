@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\OpenGLRendering\CMakeFiles\OpenGLRendering.dir\cmake_pch.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\OpenGLRendering\OGLTexture.h">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\OpenGLRendering\OGLShader.h">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\OpenGLRendering\OGLRenderer.h">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\OpenGLRendering\OGLMesh.h">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\OpenGLRendering\OGLComputeShader.h">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\OpenGLRendering\OGLTexture.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\OpenGLRendering\OGLShader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\OpenGLRendering\OGLRenderer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\OpenGLRendering\OGLMesh.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\OpenGLRendering\OGLComputeShader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\OpenGLRendering\glad\gl.h">
+      <Filter>GLAD</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\OpenGLRendering\glad\gl.c">
+      <Filter>GLAD</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\OpenGLRendering\CMakeFiles\OpenGLRendering.dir\Debug\cmake_pch.hxx">
+      <Filter>Precompile Header File</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\OpenGLRendering\CMakeFiles\OpenGLRendering.dir\Release\cmake_pch.hxx">
+      <Filter>Precompile Header File</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\OpenGLRendering\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="GLAD">
+      <UniqueIdentifier>{CF0E491F-6252-33BF-AD79-5B11197C9E9C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{8DBF7736-5834-3C9B-83C3-5B2A423C0F4D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Precompile Header File">
+      <UniqueIdentifier>{A4D64075-4812-323B-B2FF-9FA9A7D8AA76}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{D95228C3-5BA9-37B4-87D1-A0228C3BA9ED}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
