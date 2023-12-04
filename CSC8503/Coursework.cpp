@@ -1,4 +1,6 @@
 #include "Coursework.h"
+#include "Player.h"
+#include "RenderObject.h"
 
 NCL::CSC8503::Coursework::Coursework() : TutorialGame(false) {
 	world->GetMainCamera().SetFreeMode(false);
@@ -6,7 +8,14 @@ NCL::CSC8503::Coursework::Coursework() : TutorialGame(false) {
 }
 
 NCL::CSC8503::Coursework::~Coursework() {
-	
+
+}
+
+void NCL::CSC8503::Coursework::UpdateGame(float dt)
+{
+	TutorialGame::UpdateGame(dt);
+	player->HandlePlayerControls(dt,*world);
+	HandleCameraModeControls();
 }
 
 void NCL::CSC8503::Coursework::InitialiseAssets() {
@@ -24,7 +33,7 @@ void NCL::CSC8503::Coursework::InitialiseAssets() {
 	InitWorld();
 }
 
-void NCL::CSC8503::Coursework::InitCamera(){
+void NCL::CSC8503::Coursework::InitCamera() {
 	world->GetMainCamera().SetNearPlane(0.1f);
 	world->GetMainCamera().SetFarPlane(500.0f);
 	world->GetMainCamera().SetPitch(-15.0f);
@@ -33,7 +42,7 @@ void NCL::CSC8503::Coursework::InitCamera(){
 	lockedObject = nullptr;
 }
 
-void NCL::CSC8503::Coursework::UpdateKeys(){
+void NCL::CSC8503::Coursework::UpdateKeys() {
 	NCL::CSC8503::TutorialGame::UpdateKeys();
 }
 
@@ -46,7 +55,35 @@ void NCL::CSC8503::Coursework::InitWorld()
 
 	InitGameExamples();
 	InitDefaultFloor();
+	InitPlayer();
 	//BridgeConstraintTest();
 
 	testStateObject = AddStateObjectToWorld(Vector3(0, 10, 0));
+}
+
+void NCL::CSC8503::Coursework::InitPlayer() {
+	player = new Player(Vector3(-60, 10, 60));
+	player->SetRenderObject(new RenderObject(&player->GetTransform(), charMesh, nullptr, basicShader));
+	world->AddGameObject(player);
+	LockCameraToObject(player);
+}
+
+void NCL::CSC8503::Coursework::ToggleCameraMode() {
+	isCameraAttachedToPlayer = !isCameraAttachedToPlayer;
+	if (!isCameraAttachedToPlayer) {
+		LockCameraToObject(nullptr);
+		world->GetMainCamera().SetFreeMode(true);
+	}
+	else {
+		LockCameraToObject(player);
+		world->GetMainCamera().SetFreeMode(false);
+	}
+}
+
+void NCL::CSC8503::Coursework::HandleCameraModeControls() {
+	const Keyboard& keyboard = *Window::GetKeyboard();
+
+	if (keyboard.KeyPressed(KeyCodes::V)) {
+		ToggleCameraMode();
+	}
 }
