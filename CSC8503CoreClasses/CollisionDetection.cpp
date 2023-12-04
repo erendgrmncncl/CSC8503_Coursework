@@ -141,7 +141,7 @@ bool CollisionDetection::RaySphereIntersection(const Ray& r, const Transform& wo
 bool CollisionDetection::RayCapsuleIntersection(const Ray& r, const Transform& worldTransform, const CapsuleVolume& volume, RayCollision& collision) {
 	Vector3 top(worldTransform.GetPosition() + (worldTransform.GetOrientation() * Vector3(0, 1, 0) * (volume.GetHalfHeight() - volume.GetRadius())));
 	Vector3 bottom(worldTransform.GetPosition() - (worldTransform.GetOrientation() * Vector3(0, 1, 0) * (volume.GetHalfHeight() - volume.GetRadius())));
-	
+
 	Vector3 normal = r.GetPosition() - worldTransform.GetPosition();
 	Vector3 capsuleDir = top - bottom;
 	Vector3 point = Vector3::Cross(capsuleDir, normal);
@@ -149,7 +149,7 @@ bool CollisionDetection::RayCapsuleIntersection(const Ray& r, const Transform& w
 
 	Plane capPlane = Plane::PlaneFromTri(top, bottom, point);
 
-	if (!RayPlaneIntersection(r, capPlane, collision)) 
+	if (!RayPlaneIntersection(r, capPlane, collision))
 		return false;
 
 	float capsuleLineLength = capsuleDir.Length();
@@ -336,7 +336,7 @@ bool CollisionDetection::AABBSphereIntersection(const AABBVolume& volumeA, const
 	Vector3 delta = worldTransformB.GetPosition() - worldTransformA.GetPosition();
 
 	Vector3 closestPointOnBox = Maths::Vector3::Clamp(delta, -boxSize, boxSize);
-	
+
 	Vector3 localPoint = delta - closestPointOnBox;
 	float distance = localPoint.Length();
 
@@ -363,6 +363,18 @@ bool  CollisionDetection::OBBSphereIntersection(const OBBVolume& volumeA, const 
 bool CollisionDetection::AABBCapsuleIntersection(
 	const CapsuleVolume& volumeA, const Transform& worldTransformA,
 	const AABBVolume& volumeB, const Transform& worldTransformB, CollisionInfo& collisionInfo) {
+
+	/*Vector3 point = Maths::Clamp(worldTransformA.GetPosition(), worldTransformB.GetPosition() - volumeB.GetHalfDimensions(), worldTransformB.GetPosition() + volumeB.GetHalfDimensions());
+
+	SphereVolume sphere(volumeA.GetRadius());
+	Transform sphereTransform;
+	sphereTransform.SetPosition(SpherePosFromCapsule(volumeA, worldTransformA, point));
+	sphereTransform.SetScale(Vector3(1, 1, 1) * volumeA.GetRadius());
+
+	bool collision = AABBSphereIntersection(volumeB, worldTransformB, sphere, sphereTransform, collisionInfo);
+	collisionInfo.point.normal = -collisionInfo.point.normal;
+	collisionInfo.point.localA = collisionInfo.point.localA + (sphereTransform.GetPosition() - worldTransformA.GetPosition());
+	return collision;*/
 	return false;
 }
 
@@ -370,7 +382,14 @@ bool CollisionDetection::SphereCapsuleIntersection(
 	const CapsuleVolume& volumeA, const Transform& worldTransformA,
 	const SphereVolume& volumeB, const Transform& worldTransformB, CollisionInfo& collisionInfo) {
 
-	return false;
+	SphereVolume sphere(volumeA.GetRadius());
+	Transform sphereTransform;
+	sphereTransform.SetPosition(SpherePosFromCapsule(volumeA, worldTransformA, worldTransformB.GetPosition()));
+	sphereTransform.SetScale(Vector3(1, 1, 1) * volumeA.GetRadius());
+
+	bool collision = SphereIntersection(sphere, sphereTransform, volumeB, worldTransformB, collisionInfo);
+	collisionInfo.point.localA = collisionInfo.point.localA + (sphereTransform.GetPosition() - worldTransformA.GetPosition());
+	return collision;
 }
 
 bool CollisionDetection::OBBIntersection(const OBBVolume& volumeA, const Transform& worldTransformA,
@@ -472,6 +491,33 @@ Ray CollisionDetection::BuildRayFromMouse(const PerspectiveCamera& cam) {
 	return Ray(cam.GetPosition(), c);
 }
 
+Ray NCL::CollisionDetection::BuidRayFromCenterOfTheCamera(const PerspectiveCamera& cam) {
+	Vector2i screenSize = Window::GetWindow()->GetScreenSize();
+
+	//We remove the y axis mouse position from height as OpenGL is 'upside down',
+	//and thinks the bottom left is the origin, instead of the top left!
+	Vector3 nearPos = Vector3((screenSize.x / 2.f),
+		(screenSize.y / 2.f),
+		-0.99999f
+	);
+
+	//We also don't use exactly 1.0 (the normalised 'end' of the far plane) as this
+	//causes the unproject function to go a bit weird. 
+	Vector3 farPos = Vector3((screenSize.x / 2.f),
+		(screenSize.y / 2.f),
+		0.99999f
+	);
+
+	Vector3 a = Unproject(nearPos, cam);
+	Vector3 b = Unproject(farPos, cam);
+	Vector3 c = b - a;
+
+	c.Normalise();
+
+	return Ray(cam.GetPosition(), c);
+
+}
+
 //http://bookofhook.com/mousepick.pdf
 Matrix4 CollisionDetection::GenerateInverseProjection(float aspect, float fov, float nearPlane, float farPlane) {
 	Matrix4 m;
@@ -513,6 +559,21 @@ Matrix4 CollisionDetection::GenerateInverseView(const Camera& c) {
 		Matrix4::Rotation(pitch, Vector3(1, 0, 0));
 
 	return iview;
+}
+
+Vector3 NCL::CollisionDetection::SpherePosFromCapsule(const CapsuleVolume& capsule, const Transform& capTransform, const Vector3& otherObjPos) {
+	Vector3 extentPosition = capTransform.GetOrientation() * Vector3(0, 1, 0) * (capsule.GetHalfHeight() - capsule.GetRadius());
+	Vector3 capTop(capTransform.GetPosition() + extentPosition);
+	Vector3 capBottom(capTransform.GetPosition() - extentPosition);
+
+	Vector3 capsuleDir = capTop - capBottom;
+	float capLineLength = capsuleDir.Length();
+	capsuleDir.Normalise();
+
+	Vector3 pointCapDir = otherObjPos - capBottom;
+	float dot = Maths::Clamp(Vector3::Dot(pointCapDir, capsuleDir), 0.0f, capLineLength);
+
+	return capBottom + (capsuleDir * dot);
 }
 
 

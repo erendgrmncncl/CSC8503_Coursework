@@ -73,6 +73,7 @@ namespace NCL {
 		static bool RayBoxIntersection(const Ray&r, const Vector3& boxPos, const Vector3& boxSize, RayCollision& collision);
 
 		static Ray BuildRayFromMouse(const PerspectiveCamera& c);
+		static Ray BuidRayFromCenterOfTheCamera(const PerspectiveCamera& c);
 
 		static bool RayIntersection(const Ray&r, GameObject& object, RayCollision &collisions, Layer layer = Layer::All);
 
@@ -114,6 +115,8 @@ namespace NCL {
 		static Matrix4		GenerateInverseView(const Camera &c);
 
 	protected:
+
+		static Vector3 SpherePosFromCapsule(const CapsuleVolume& capsule, const Transform& capTransform, const Vector3& otherObjPos);
 
 	private:
 		CollisionDetection()	{}
