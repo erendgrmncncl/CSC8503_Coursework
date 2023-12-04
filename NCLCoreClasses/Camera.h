@@ -59,6 +59,10 @@ namespace NCL {
 			return *this;
 		}
 
+		Controller& GetActiveController() {
+			return *activeController;
+		}
+
 		Camera& SetFreeMode(bool isFreeMode) {
 			activeController->SetIsInFreeMode(isFreeMode);
 			return *this;
