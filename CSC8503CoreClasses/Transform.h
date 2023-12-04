@@ -32,12 +32,18 @@ namespace NCL {
 				return matrix;
 			}
 			void UpdateMatrix();
+			void AddChild(Transform* child);
+			std::vector<Transform*>::const_iterator GetChildIteratorStart();
+			std::vector<Transform*>::const_iterator GetChildIteratorEnd();
 		protected:
 			Matrix4		matrix;
 			Quaternion	orientation;
 			Vector3		position;
 
 			Vector3		scale;
+			
+			Transform* parent = nullptr;
+			std::vector<Transform*> children;
 		};
 	}
 }

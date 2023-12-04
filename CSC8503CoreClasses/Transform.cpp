@@ -1,4 +1,5 @@
 #include "Transform.h"
+#include <vector>
 
 using namespace NCL::CSC8503;
 
@@ -33,4 +34,9 @@ Transform& Transform::SetOrientation(const Quaternion& worldOrientation) {
 	orientation = worldOrientation;
 	UpdateMatrix();
 	return *this;
+}
+
+void NCL::CSC8503::Transform::AddChild(Transform* child) {
+	children.push_back(child);
+	child->parent = this;
 }
