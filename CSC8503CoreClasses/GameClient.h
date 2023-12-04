@@ -1,4 +1,5 @@
 #pragma once
+#pragma once
 #include "NetworkBase.h"
 #include <stdint.h>
 #include <thread>

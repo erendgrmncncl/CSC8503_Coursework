@@ -165,6 +165,34 @@ void TestStateMachine() {
 	}
 }
 
+void TestNetworking() {
+	NetworkBase::Initialise();
+
+	TestPacketReceiver serverReceiver("Server");
+	TestPacketReceiver clientReceiver("Client");
+
+	int port = NetworkBase::GetDefaultPort();
+
+	GameServer* server = new GameServer(port, 1);
+	GameClient* client = new GameClient();
+
+	server->RegisterPacketHandler(String_Message, &serverReceiver);
+	client->RegisterPacketHandler(String_Message, &clientReceiver);
+
+	bool canConnect = client->Connect(127, 0, 0, 1, port);
+	for (int i = 0; i < 100; i++){
+		server->SendGlobalPacket((GamePacket&)StringPacket("Server says hello!" + std::to_string(i)));
+		client->SendPacket((GamePacket&)StringPacket("Client says hello!" + std::to_string(i)));
+
+		server->UpdateServer();
+		client->UpdateClient();
+
+		std::this_thread::sleep_for(std::chrono::milliseconds(10));
+	}
+
+	NetworkBase::Destroy();
+}
+
 /*
 
 The main function should look pretty familar to you!
@@ -179,7 +207,9 @@ hide or show the
 */
 int main() {
 	Window* w = Window::CreateGameWindow("CSC8503 Game technology!", 1280, 720);
-	TestPushdownAutomata(w);
+	//TestNetworking();
+	//TestPushdownAutomata(w);
+
 	if (!w->HasInitialised()) {
 		return -1;
 	}
@@ -189,6 +219,7 @@ int main() {
 
 	//TutorialGame* g = new TutorialGame();
 	Coursework* courseWorkScene = new Coursework();
+	//NetworkedGame* networkedGame = new NetworkedGame();
 	w->GetTimer().GetTimeDeltaSeconds(); //Clear the timer so we don't get a larget first dt!
 
 	TestPathfinding();
@@ -214,6 +245,7 @@ int main() {
 		DisplayPathfinding();
 		//g->UpdateGame(dt);
 		courseWorkScene->UpdateGame(dt);
+		//networkedGame->UpdateGame(dt);
 	}
 	Window::DestroyGameWindow();
 }

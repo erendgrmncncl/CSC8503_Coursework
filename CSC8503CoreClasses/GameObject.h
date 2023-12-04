@@ -6,8 +6,7 @@ using std::vector;
 
 enum Layer {
 	All,
-	LayerOne,
-	LayerTwo
+	Pickable
 };
 
 namespace NCL::CSC8503 {
@@ -84,6 +83,8 @@ namespace NCL::CSC8503 {
 		Layer getLayer() const;
 		void setLayer(Layer layerToSet);
 
+		void AttachToAnotherObj(GameObject& obj);
+
 		GameObject* getNextObjectInDirection(const GameWorld& world, Vector3 direction);
 
 	protected:
@@ -96,6 +97,7 @@ namespace NCL::CSC8503 {
 		NetworkObject*		networkObject;
 
 		bool		isActive;
+		bool		isAttached = false;
 		int			worldID;
 		std::string	name;
 
