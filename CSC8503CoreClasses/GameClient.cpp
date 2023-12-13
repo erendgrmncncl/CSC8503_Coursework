@@ -5,6 +5,7 @@ using namespace CSC8503;
 
 GameClient::GameClient() {
 	netHandle = enet_host_create(nullptr, 1, 1, 0, 0);
+	peerID = -1;
 }
 
 GameClient::~GameClient() {
@@ -17,7 +18,7 @@ bool GameClient::Connect(uint8_t a, uint8_t b, uint8_t c, uint8_t d, int portNum
 	address.host = (d << 24) | (c << 16) | (b << 8) | (a);
 
 	netPeer = enet_host_connect(netHandle, &address, 2, 0);
-	return netPeer;
+	return netPeer != nullptr;
 }
 
 void GameClient::UpdateClient() {
@@ -27,6 +28,7 @@ void GameClient::UpdateClient() {
 	ENetEvent event;
 	while (enet_host_service(netHandle, &event, 0) > 0){
 		if (event.type == ENET_EVENT_TYPE_CONNECT) {
+			peerID = netPeer->outgoingPeerID +1;
 			std::cout << "Connected to server!" << std::endl;
 		}
 		else if (event.type == ENET_EVENT_TYPE_RECEIVE) {
@@ -41,4 +43,8 @@ void GameClient::UpdateClient() {
 void GameClient::SendPacket(GamePacket& payload) {
 	ENetPacket* dataPacket = enet_packet_create(&payload, payload.GetTotalSize(), 0);
 	enet_peer_send(netPeer, 0, dataPacket);
+}
+
+int GameClient::GetPeerID() const {
+	return this->peerID;
 }

@@ -106,9 +106,9 @@ bool GameWorld::Raycast(Ray& r, RayCollision& closestCollision, bool closestObje
 		}
 	}
 	if (collision.node) {
-
 		auto* collidedObject = static_cast<GameObject*>(collision.node);
-		if (collidedObject != nullptr && layer != Layer::All && layer != collidedObject->getLayer()) {
+		bool isLayerOk = (layer == Layer::All || layer == collidedObject->getLayer());
+		if (collidedObject != nullptr && !isLayerOk) {
 			return false;
 		}
 		closestCollision		= collision;

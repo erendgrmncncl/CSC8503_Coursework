@@ -209,7 +209,10 @@ void PhysicsSystem::BasicCollisionDetection() {
 
 			CollisionDetection::CollisionInfo info;
 			if (CollisionDetection::ObjectIntersection(*i, *j, info)) {
-				std::cout << "Collision between" << (*i)->GetName() << " and " << (*j)->GetName() << std::endl;
+				if (((*i)->GetGameObjectType() == GameObjectType::Player && (*j)->GetGameObjectType() == GameObjectType::Throwable) || ((*j)->GetGameObjectType() == GameObjectType::Player && (*i)->GetGameObjectType() == GameObjectType::Throwable)) {
+					return;
+				}
+				//std::cout << "Collision between" << (*i)->GetName() << " and " << (*j)->GetName() << std::endl;
 				ImpulseResolveCollision(*info.a, *info.b, info.point);
 				info.framesLeft = numCollisionFrames;
 				allCollisions.insert(info);
@@ -348,7 +351,7 @@ void PhysicsSystem::IntegrateAccel(float dt) {
 		Vector3 force = object->GetForce();
 		Vector3 accel = force * inverseMass;
 
-		if (applyGravity && inverseMass > 0) {
+		if (applyGravity && inverseMass > 0 && (*i)->GetIsAffectedByGravity()) {
 			accel += gravity;
 		}
 

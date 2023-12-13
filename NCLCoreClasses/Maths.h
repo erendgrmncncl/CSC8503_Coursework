@@ -28,6 +28,8 @@ namespace NCL::Maths {
 		return degs * PI / 180.0f;
 	};
 
+	float CalculateDistance(Vector3& posA, Vector3& posB);
+
 	float RandomValue(float min, float max);
 
 	void ScreenBoxOfTri(const Vector3& v0, const Vector3& v1, const Vector3& v2, Vector2& topLeft, Vector2& bottomRight);
@@ -36,6 +38,7 @@ namespace NCL::Maths {
 	float Areaof2DTri(const Vector3 &a, const Vector3 &b, const Vector3 & c);
 
 	float AreaofTri3D(const Vector3 &a, const Vector3 &b, const Vector3 & c);
+
 
 	template<class T>
 	inline T Clamp(T value, T min, T max) {

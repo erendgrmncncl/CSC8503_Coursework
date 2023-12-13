@@ -10,6 +10,8 @@ namespace NCL {
 			~GameServer();
 
 			bool Initialise();
+			void AddPeer(int peerNumber);
+			bool GetPeer(int peerNumber, int& peerId);
 			void Shutdown();
 
 			void SetGameWorld(GameWorld &g);
@@ -23,6 +25,7 @@ namespace NCL {
 			int			port;
 			int			clientMax;
 			int			clientCount;
+			int*        peers;
 			GameWorld*	gameWorld;
 
 			int incomingDataRate;

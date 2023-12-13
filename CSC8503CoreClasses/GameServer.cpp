@@ -9,6 +9,10 @@ GameServer::GameServer(int onPort, int maxClients) {
 	clientMax = maxClients;
 	clientCount = 0;
 	netHandle = nullptr;
+	peers = new int[clientMax];
+	for (int i = 0; i < clientMax; ++i){
+		peers[i] = -1;
+	}
 	Initialise();
 }
 
@@ -36,6 +40,31 @@ bool GameServer::Initialise() {
 	return true;
 }
 
+void NCL::CSC8503::GameServer::AddPeer(int peerNumber) {
+	int emptyIndex = clientMax;
+	for (int i = 0; i < clientMax; i++) {
+		if (peers[i] == peerNumber){
+			return;
+		}
+		if (peers[i] == -1) {
+			emptyIndex = std::min(i, emptyIndex);
+		}
+	}
+	if (emptyIndex < clientMax){
+		peers[emptyIndex] = peerNumber;
+	}
+}
+
+bool NCL::CSC8503::GameServer::GetPeer(int peerNumber, int& peerId){
+	if (peerNumber >= clientMax)
+		return false;
+	if (peers[peerNumber] == -1) {
+		return false;
+	}
+	peerId = peers[peerNumber];
+	return true;
+}
+
 bool GameServer::SendGlobalPacket(int msgID) {
 	GamePacket packet;
 	packet.type = msgID;
@@ -59,10 +88,16 @@ void GameServer::UpdateServer() {
 		int peer = p->incomingPeerID;
 
 		if (type == ENetEventType::ENET_EVENT_TYPE_CONNECT) {
-			std::cout << "Server: New Client Connected" << std::endl;
+			std::cout << "Server: A client has been connected";
+			AddPeer(peer + 1);
 		}
 		else if (type == ENetEventType::ENET_EVENT_TYPE_DISCONNECT) {
 			std::cout << "Server: A client has disconnected" << std::endl;
+			for (int i = 0; i < 3; ++i){
+				if (peers[i] == peer+1) {
+					peers[i] = -1;
+				}
+			}
 		}
 		else if (type == ENetEventType::ENET_EVENT_TYPE_RECEIVE) {
 			GamePacket* packet = (GamePacket*)event.packet->data;

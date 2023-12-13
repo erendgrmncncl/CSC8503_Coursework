@@ -132,3 +132,7 @@ void NetworkObject::UpdateStateHistory(int minID) {
 		}
 	}
 }
+
+int NetworkObject::GetNetworkID() const {
+	return networkID;
+}

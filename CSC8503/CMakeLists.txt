@@ -11,6 +11,11 @@ set(Header_Files
     "TutorialGame.h"
     "Coursework.h"
     "Player.h"
+    "CourseworkScenes.h"
+    "SceneManager.h"
+    "MainMenuScene.h"
+    "CollisionTestScene.h"
+    "Enemy.h"
 )
 source_group("Header Files" FILES ${Header_Files})
 
@@ -23,6 +28,11 @@ set(Source_Files
     "TutorialGame.cpp"
     "Coursework.cpp"
     "Player.cpp"
+    "CourseworkScenes.cpp"
+    "SceneManager.cpp"
+    "MainMenuScene.cpp"
+    "CollisionTestScene.cpp"
+    "Enemy.cpp"
 )
 
 if(USE_VULKAN)

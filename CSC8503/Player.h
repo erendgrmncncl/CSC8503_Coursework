@@ -8,12 +8,14 @@ namespace NCL {
 		public:
 			Player(const Vector3& position, float inverseMass = 100.f);
 
-			void HandlePlayerControls(float dt, GameWorld& world);
+			virtual void HandlePlayerControls(float dt, GameWorld& world);
 		protected:
-			float speed = 10.f;
+			float speed = 40.f;
 			GameObject* heldObj = nullptr;
 
 			void PickUpObject(GameWorld& world);
+			void HandleHeldObjObject();
+			void ThrowObject(GameWorld& world);
 		private:
 		};
 	}

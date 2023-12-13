@@ -70,10 +70,12 @@ namespace NCL {
 			const SphereVolume& volumeB, const Transform& worldTransformB, CollisionInfo& collisionInfo);
 
 		//TODO ADD THIS PROPERLY
-		static bool RayBoxIntersection(const Ray&r, const Vector3& boxPos, const Vector3& boxSize, RayCollision& collision);
+		static bool RayBoxIntersection	(const Ray&r, const Vector3& boxPos, const Vector3& boxSize, RayCollision& collision);
 
 		static Ray BuildRayFromMouse(const PerspectiveCamera& c);
 		static Ray BuidRayFromCenterOfTheCamera(const PerspectiveCamera& c);
+
+		static Vector3 GetCameraVec(const PerspectiveCamera& cam);
 
 		static bool RayIntersection(const Ray&r, GameObject& object, RayCollision &collisions, Layer layer = Layer::All);
 
@@ -102,6 +104,9 @@ namespace NCL {
 
 		static bool OBBIntersection(	const OBBVolume& volumeA, const Transform& worldTransformA,
 										const OBBVolume& volumeB, const Transform& worldTransformB, CollisionInfo& collisionInfo);
+
+		static bool CapsuleIntersection( const OBBVolume& volumeA, const Transform& worldTransformA,
+			                             const OBBVolume& volumeB, const Transform& worldTransformB, CollisionInfo& collisionInfo);
 
 
 		static bool OBBSphereIntersection(const OBBVolume& volumeA, const Transform& worldTransformA,

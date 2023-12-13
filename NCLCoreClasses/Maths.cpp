@@ -37,6 +37,14 @@ namespace NCL {
 			return area.Length() * 0.5f;
 		}
 
+		float CalculateDistance(Vector3& posA, Vector3& posB){
+			float dx = posA.x - posB.x;
+			float dy = posA.y - posB.y;
+			float dz = posA.z - posB.z;
+
+			return std::sqrt(dx * dx + dy * dy + dz * dz);
+		}
+
 		float RandomValue(float min, float max) {
 			float floatValue = rand() / (float)RAND_MAX;
 			float range = max - min;

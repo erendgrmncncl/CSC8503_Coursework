@@ -27,3 +27,19 @@ Vector3 Vector3::Clamp(const Vector3& input, const Vector3& mins, const Vector3&
 		std::clamp(input.z, mins.z, maxs.z)
 	);
 }
+
+Vector3 Vector3::MoveTowards(const Vector3& posA, const Vector3& posB, float maxDt) {
+    Vector3 direction = posB - posA;
+    float distance = direction.Magnitude();
+
+    if (distance <= maxDt)
+    {
+        return posB;
+    }
+
+    direction.Normalise();
+
+    Vector3 newPosition = posA + direction * maxDt;
+
+    return newPosition;
+}

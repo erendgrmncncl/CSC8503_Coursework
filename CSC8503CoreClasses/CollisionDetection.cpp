@@ -197,6 +197,9 @@ bool CollisionDetection::ObjectIntersection(GameObject* a, GameObject* b, Collis
 		return OBBIntersection((OBBVolume&)*volA, transformA, (OBBVolume&)*volB, transformB, collisionInfo);
 	}
 	//Two Capsules
+	if (pairType == VolumeType::Capsule){
+		return CapsuleIn
+	}
 
 	//AABB vs Sphere pairs
 	if (volA->type == VolumeType::AABB && volB->type == VolumeType::Sphere) {
@@ -357,6 +360,31 @@ bool CollisionDetection::AABBSphereIntersection(const AABBVolume& volumeA, const
 
 bool  CollisionDetection::OBBSphereIntersection(const OBBVolume& volumeA, const Transform& worldTransformA,
 	const SphereVolume& volumeB, const Transform& worldTransformB, CollisionInfo& collisionInfo) {
+	Quaternion boxOri = worldTransformA.GetOrientation();
+	Matrix3 boxRot = Matrix3(boxOri);
+	Matrix3 invBoxRot = Matrix3(boxOri.Conjugate());
+
+	Vector3 boxSize = volumeA.GetHalfDimensions();
+
+	Vector3 delta = worldTransformB.GetPosition() - worldTransformA.GetPosition();
+	delta = invBoxRot * delta;
+
+	Vector3 closestPointOnBox = Maths::Vector3::Clamp(delta, -boxSize, boxSize);
+
+	Vector3 localPoint = delta - closestPointOnBox;
+	float distance = localPoint.Length();
+
+	if (distance < volumeB.GetRadius())
+	{
+		Vector3 collisionNormal = (boxRot * localPoint).Normalised();
+		float penetration = (volumeB.GetRadius() - distance);
+
+		Vector3 localA = localPoint;
+		Vector3 localB = -collisionNormal * volumeB.GetRadius();
+
+		collisionInfo.AddContactPoint(localA, localB, collisionNormal, penetration);
+		return true;
+	}
 	return false;
 }
 
@@ -364,7 +392,7 @@ bool CollisionDetection::AABBCapsuleIntersection(
 	const CapsuleVolume& volumeA, const Transform& worldTransformA,
 	const AABBVolume& volumeB, const Transform& worldTransformB, CollisionInfo& collisionInfo) {
 
-	/*Vector3 point = Maths::Clamp(worldTransformA.GetPosition(), worldTransformB.GetPosition() - volumeB.GetHalfDimensions(), worldTransformB.GetPosition() + volumeB.GetHalfDimensions());
+	Vector3 point = Maths::Vector3::Clamp(worldTransformA.GetPosition(), worldTransformB.GetPosition() - volumeB.GetHalfDimensions(), worldTransformB.GetPosition() + volumeB.GetHalfDimensions());
 
 	SphereVolume sphere(volumeA.GetRadius());
 	Transform sphereTransform;
@@ -374,7 +402,7 @@ bool CollisionDetection::AABBCapsuleIntersection(
 	bool collision = AABBSphereIntersection(volumeB, worldTransformB, sphere, sphereTransform, collisionInfo);
 	collisionInfo.point.normal = -collisionInfo.point.normal;
 	collisionInfo.point.localA = collisionInfo.point.localA + (sphereTransform.GetPosition() - worldTransformA.GetPosition());
-	return collision;*/
+	return collision;
 	return false;
 }
 
@@ -394,7 +422,92 @@ bool CollisionDetection::SphereCapsuleIntersection(
 
 bool CollisionDetection::OBBIntersection(const OBBVolume& volumeA, const Transform& worldTransformA,
 	const OBBVolume& volumeB, const Transform& worldTransformB, CollisionInfo& collisionInfo) {
-	return false;
+	Quaternion orientationA = worldTransformA.GetOrientation();
+	Quaternion orientationB = worldTransformB.GetOrientation();
+
+	Matrix3 transformA = Matrix3(orientationA);
+	Matrix3 invTransformA = Matrix3(orientationA.Conjugate());
+	Matrix3 transformB = Matrix3(orientationB);
+
+	Matrix3 boxBLocalRot = invTransformA * transformB;
+	Matrix3 AbsboxBLclRot;
+
+	Vector3 boxAPos = worldTransformA.GetPosition();
+	Vector3 boxBPos = worldTransformB.GetPosition();
+
+	for (int i = 0; i < 3; ++i)
+	{
+		for (int j = 0; j < 3; ++j)
+		{
+			AbsboxBLclRot.array[i][j] = std::abs(boxBLocalRot.array[i][j]) + std::numeric_limits<float>::epsilon();
+		}
+	}
+
+	Vector3 boxBLocalPos = worldTransformB.GetPosition() - worldTransformA.GetPosition();
+	boxBLocalPos = invTransformA * boxBLocalPos;
+
+	Vector3 boxASize = volumeA.GetHalfDimensions();
+	Vector3 boxBSize = volumeB.GetHalfDimensions();
+
+	float ra, rb;
+	float penetration = FLT_MAX;
+	Vector3 bestAxis;
+
+	// Use the Axis of A as SAT
+	for (int i = 0; i < 3; ++i)
+	{
+		ra = boxASize[i];
+		rb = Vector3::Dot(boxBSize, AbsboxBLclRot.GetRow(i));
+		float t = ra + rb - std::abs(boxBLocalPos[i]);
+		if (t < 0) return false;
+		if (t < penetration)
+		{
+			penetration = t;
+			bestAxis = transformA.GetRow(i);
+		}
+
+
+		ra = Vector3::Dot(boxASize, AbsboxBLclRot.GetColumn(i));
+		rb = boxBSize[i];
+		t = ra + rb - std::abs(Vector3::Dot(boxBLocalPos, boxBLocalRot.GetColumn(i)));
+		if (t < 0) return false;
+		if (t < penetration)
+		{
+			penetration = t;
+			bestAxis = transformB.GetRow(i);
+		}
+	}
+
+	for (int i = 0; i < 3; ++i)
+	{
+		for (int j = 0; j < 3; ++j)
+		{
+			Vector3 Axis = Vector3::Cross(transformA.GetRow(i), transformB.GetRow(j));
+			ra = boxASize[(i + 1) % 3] * AbsboxBLclRot.array[(i + 2) % 3][j] + boxASize[(i + 2) % 3] * AbsboxBLclRot.array[(i + 1) % 3][j];
+			rb = boxBSize[(j + 1) % 3] * AbsboxBLclRot.array[i][(j + 2) % 3] + boxBSize[(j + 2) % 3] * AbsboxBLclRot.array[i][(j + 2) % 3];
+			float t = ra + rb - std::abs(Vector3::Dot(boxBLocalPos, Axis));
+			if (t < 0) return false;
+			if (t < penetration)
+			{
+				penetration = t;
+				bestAxis = Axis;
+			}
+		}
+	}
+
+	Vector3 Normal = bestAxis.Normalised();
+	Vector3 localA = boxAPos - Normal * (Vector3::Dot(Normal, boxAPos) - penetration);
+	localA = transformA * localA;
+	Vector3 localB = boxBPos - Normal * (Vector3::Dot(Normal, boxBPos) - penetration);
+	localB = transformB * localB;
+
+	collisionInfo.AddContactPoint(localA, localB, Normal, penetration);
+
+	return true;
+}
+
+bool NCL::CollisionDetection::CapsuleIntersection(const OBBVolume& volumeA, const Transform& worldTransformA, const OBBVolume& volumeB, const Transform& worldTransformB, CollisionInfo& collisionInfo) {
+
 }
 
 Matrix4 GenerateInverseView(const Camera& c) {
@@ -516,6 +629,33 @@ Ray NCL::CollisionDetection::BuidRayFromCenterOfTheCamera(const PerspectiveCamer
 
 	return Ray(cam.GetPosition(), c);
 
+}
+
+Vector3 NCL::CollisionDetection::GetCameraVec(const PerspectiveCamera& cam)
+{
+	Vector2i screenSize = Window::GetWindow()->GetScreenSize();
+
+	//We remove the y axis mouse position from height as OpenGL is 'upside down',
+	//and thinks the bottom left is the origin, instead of the top left!
+	Vector3 nearPos = Vector3((screenSize.x / 2.f),
+		(screenSize.y / 2.f),
+		-0.99999f
+	);
+
+	//We also don't use exactly 1.0 (the normalised 'end' of the far plane) as this
+	//causes the unproject function to go a bit weird. 
+	Vector3 farPos = Vector3((screenSize.x / 2.f),
+		(screenSize.y / 2.f),
+		0.99999f
+	);
+
+	Vector3 a = Unproject(nearPos, cam);
+	Vector3 b = Unproject(farPos, cam);
+	Vector3 c = b - a;
+
+	c.Normalise();
+
+	return c;
 }
 
 //http://bookofhook.com/mousepick.pdf

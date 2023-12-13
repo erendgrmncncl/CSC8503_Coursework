@@ -37,6 +37,44 @@ namespace NCL::CSC8503 {
 		}
 	};
 
+	struct GameStatePacket : public GamePacket {
+		bool isGameStarted = false;
+		GameStatePacket(bool val) {
+			type = Game_State;
+			size = sizeof(GameStatePacket);
+
+			isGameStarted = val;
+		}
+	};
+
+	struct SyncPlayerListPacket : public GamePacket {
+		int playerList[4];
+		SyncPlayerListPacket(std::vector<int>& serverPlayers) {
+			type = SyncPlayers;
+			size = sizeof(SyncPlayerListPacket);
+
+			for (int i = 0; i < 4; i++) {
+				playerList[i] = serverPlayers[i];
+			}
+		}
+
+		void SyncPlayerList(std::vector<int>& clientPlayerList) {
+			for (int i = 0; i < 4; ++i) {
+				clientPlayerList[i] = playerList[i];
+			}
+		}
+	};
+
+	struct ClientPlayerInputPacket : public GamePacket {
+		Vector3 movementVec;
+		ClientPlayerInputPacket(Vector3 vec) {
+			type = ClientPlayerInput;
+			size = sizeof(ClientPlayerInputPacket);
+
+			movementVec = vec;
+		}
+	};
+
 	class NetworkObject		{
 	public:
 		NetworkObject(GameObject& o, int id);
@@ -47,11 +85,12 @@ namespace NCL::CSC8503 {
 		//Called by servers
 		virtual bool WritePacket(GamePacket** p, bool deltaFrame, int stateID);
 
+		int GetNetworkID() const;
+
 		void UpdateStateHistory(int minID);
+		NetworkState& GetLatestNetworkState();
 
 	protected:
-
-		NetworkState& GetLatestNetworkState();
 
 		bool GetNetworkState(int frameID, NetworkState& state);
 

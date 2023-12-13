@@ -84,56 +84,46 @@ void TutorialGame::UpdateGame(float dt) {
 	if (!inSelectionMode) {
 		world->GetMainCamera().UpdateCamera(dt);
 	}
-	if (lockedObject != nullptr) {
-		Vector3 objPos = lockedObject->GetTransform().GetPosition();
-		Vector3 camPos = objPos + lockedOffset;
-
-		Matrix4 temp = Matrix4::BuildViewMatrix(camPos, objPos, Vector3(0, 1, 0));
-
-		Matrix4 modelMat = temp.Inverse();
-
-		Quaternion q(modelMat);
-		Vector3 angles = q.ToEuler(); //nearly there now!
-
-		world->GetMainCamera().SetPosition(camPos);
-		world->GetMainCamera().SetPitch(angles.x);
-		world->GetMainCamera().SetYaw(angles.y);
-	}
-
-	UpdateKeys();
-
-	if (useGravity) {
-		Debug::Print("(G)ravity on", Vector2(5, 95), Debug::RED);
+	if (isMainMenuScene)
+	{
+		HandleMainMenuTexts();
 	}
 	else {
-		Debug::Print("(G)ravity off", Vector2(5, 95), Debug::RED);
-	}
+		UpdateKeys();
 
-	RayCollision closestCollision;
-	if (Window::GetKeyboard()->KeyPressed(KeyCodes::K) && selectionObject) {
-		Vector3 rayPos;
-		Vector3 rayDir;
-
-		rayDir = selectionObject->GetTransform().GetOrientation() * Vector3(0, 0, -1);
-
-		rayPos = selectionObject->GetTransform().GetPosition();
-
-		Ray r = Ray(rayPos, rayDir);
-
-		if (world->Raycast(r, closestCollision, true, selectionObject)) {
-			if (objClosest) {
-				objClosest->GetRenderObject()->SetColour(Vector4(1, 1, 1, 1));
-			}
-			objClosest = (GameObject*)closestCollision.node;
-
-			objClosest->GetRenderObject()->SetColour(Vector4(1, 0, 1, 1));
+		if (useGravity) {
+			Debug::Print("(G)ravity on", Vector2(5, 95), Debug::RED);
 		}
+		else {
+			Debug::Print("(G)ravity off", Vector2(5, 95), Debug::RED);
+		}
+
+		RayCollision closestCollision;
+		if (Window::GetKeyboard()->KeyPressed(KeyCodes::K) && selectionObject) {
+			Vector3 rayPos;
+			Vector3 rayDir;
+
+			rayDir = selectionObject->GetTransform().GetOrientation() * Vector3(0, 0, -1);
+
+			rayPos = selectionObject->GetTransform().GetPosition();
+
+			Ray r = Ray(rayPos, rayDir);
+
+			if (world->Raycast(r, closestCollision, true, selectionObject)) {
+				if (objClosest) {
+					objClosest->GetRenderObject()->SetColour(Vector4(1, 1, 1, 1));
+				}
+				objClosest = (GameObject*)closestCollision.node;
+
+				objClosest->GetRenderObject()->SetColour(Vector4(1, 0, 1, 1));
+			}
+		}
+
+		Debug::DrawLine(Vector3(), Vector3(0, 100, 0), Vector4(1, 0, 0, 1));
+
+		SelectObject();
+		MoveSelectedObject();
 	}
-
-	Debug::DrawLine(Vector3(), Vector3(0, 100, 0), Vector4(1, 0, 0, 1));
-
-	SelectObject();
-	MoveSelectedObject();
 
 	world->UpdateWorld(dt);
 	renderer->Update(dt);
@@ -145,6 +135,8 @@ void TutorialGame::UpdateGame(float dt) {
 	if (testStateObject) {
 		testStateObject->Update(dt);
 	}
+
+	HandleCameraLock();
 }
 
 void TutorialGame::UpdateKeys() {
@@ -180,7 +172,7 @@ void TutorialGame::UpdateKeys() {
 	}
 
 	if (lockedObject) {
-		LockedObjectMovement();
+		//LockedObjectMovement();
 	}
 	else {
 		DebugObjectMovement();
@@ -201,27 +193,56 @@ void TutorialGame::LockedObjectMovement() {
 	fwdAxis.y = 0.0f;
 	fwdAxis.Normalise();
 
+	if (Window::GetKeyboard()->KeyPressed(KeyCodes::SPACE) && selectionObject->GetName() == "player") {
+		lockedObject->GetPhysicsObject()->AddForce(Vector3(0, 1, 0) * 16.0f * 50.0f);
+	}
 
 	if (Window::GetKeyboard()->KeyDown(KeyCodes::UP)) {
-		selectionObject->GetPhysicsObject()->AddForce(fwdAxis);
+		Quaternion lockedObjOrientation = lockedObject->GetTransform().GetOrientation();
+
+		Vector3 forwardDirection = lockedObjOrientation * Vector3(0, 0, -1);
+
+		forwardDirection.Normalise();
+
+		float forceMagnitude = 1.0f;
+		lockedObject->GetPhysicsObject()->AddForce(forwardDirection * forceMagnitude);
 	}
 
 	if (Window::GetKeyboard()->KeyDown(KeyCodes::DOWN)) {
-		selectionObject->GetPhysicsObject()->AddForce(-fwdAxis);
+		Quaternion lockedObjOrientation = lockedObject->GetTransform().GetOrientation();
+		Vector3 backwardDirection = lockedObjOrientation * Vector3(0, 0, 1);
+		backwardDirection.Normalise();
+
+		float forceMagnitude = 1.f;
+		lockedObject->GetPhysicsObject()->AddForce(backwardDirection * forceMagnitude);
 	}
 
-	if (Window::GetKeyboard()->KeyDown(KeyCodes::NEXT)) {
-		selectionObject->GetPhysicsObject()->AddForce(Vector3(0, -10, 0));
+	if (Window::GetKeyboard()->KeyDown(KeyCodes::LEFT)) {
+		lockedObject->GetPhysicsObject()->AddTorque(Vector3(0, 1, 0));
+	}
+
+	if (Window::GetKeyboard()->KeyDown(KeyCodes::RIGHT)) {
+		lockedObject->GetPhysicsObject()->AddTorque(Vector3(0, -1, 0));
 	}
 }
 
+void NCL::CSC8503::TutorialGame::HandleMainMenuTexts() {
+
+	Debug::Print("1-) Start Single Player", Vector2(30, 70));
+
+	Debug::Print("2-) Collision Test Scene", Vector2(30, 75));
+
+	Debug::Print("3-) Start Multi Player (Server)", Vector2(30, 80));
+	Debug::Print("4-) Start Multi Player (Client)", Vector2(30, 85));
+}
+
 void NCL::CSC8503::TutorialGame::BridgeConstraintTest() {
-	Vector3 cubeSize = Vector3(8, 8, 8);
+	Vector3 cubeSize = Vector3(5, 1, 5);
 
 	float invCubeMass = 5.f;
 	int numLinks = 10.f;
-	float maxDistance = 30.f;
-	float cubeDistance = 20.f;
+	float maxDistance = 11.f;
+	float cubeDistance = 10.f;
 
 	Vector3 startPos = Vector3(0, 50, 0);
 
@@ -240,6 +261,25 @@ void NCL::CSC8503::TutorialGame::BridgeConstraintTest() {
 	PositionConstraint* constraint = new PositionConstraint(previous, end, maxDistance);
 	world->AddConstraint(constraint);
 
+}
+
+void NCL::CSC8503::TutorialGame::HandleCameraLock() {
+	if (lockedObject != nullptr) {
+		Vector3 objPos = lockedObject->GetTransform().GetPosition();
+		Vector3 camPos = objPos + lockedOffset;
+
+		Matrix4 temp = Matrix4::BuildViewMatrix(camPos, objPos, Vector3(0, 1, 0));
+
+		Matrix4 modelMat = temp.Inverse();
+
+		//TODO(eren.degirmenci): Poss tips for rotating meshes to camera direction.
+		Quaternion q(modelMat);
+		Vector3 angles = q.ToEuler(); //nearly there now!
+
+		world->GetMainCamera().SetPosition(camPos);
+		//world->GetMainCamera().SetPitch(angles.x);
+		//world->GetMainCamera().SetYaw(angles.y);
+	}
 }
 
 void TutorialGame::DebugObjectMovement() {
@@ -299,7 +339,7 @@ void TutorialGame::InitWorld() {
 	InitDefaultFloor();
 	BridgeConstraintTest();
 
-	testStateObject = AddStateObjectToWorld(Vector3(0, 10, 0));
+	//testStateObject = AddStateObjectToWorld(Vector3(0, 10, 0));
 }
 
 /*
@@ -310,7 +350,7 @@ A single function to add a large immoveable cube to the bottom of our world
 GameObject* TutorialGame::AddFloorToWorld(const Vector3& position) {
 	GameObject* floor = new GameObject();
 
-	Vector3 floorSize = Vector3(200, 2, 200);
+	Vector3 floorSize = Vector3(100, 2, 100);
 	AABBVolume* volume = new AABBVolume(floorSize);
 	floor->SetBoundingVolume((CollisionVolume*)volume);
 	floor->GetTransform()
@@ -361,6 +401,27 @@ GameObject* TutorialGame::AddCubeToWorld(const Vector3& position, Vector3 dimens
 	GameObject* cube = new GameObject();
 
 	AABBVolume* volume = new AABBVolume(dimensions);
+	cube->SetBoundingVolume((CollisionVolume*)volume);
+
+	cube->GetTransform()
+		.SetPosition(position)
+		.SetScale(dimensions * 2);
+
+	cube->SetRenderObject(new RenderObject(&cube->GetTransform(), cubeMesh, basicTex, basicShader));
+	cube->SetPhysicsObject(new PhysicsObject(&cube->GetTransform(), cube->GetBoundingVolume()));
+
+	cube->GetPhysicsObject()->SetInverseMass(inverseMass);
+	cube->GetPhysicsObject()->InitCubeInertia();
+
+	world->AddGameObject(cube);
+
+	return cube;
+}
+
+GameObject* NCL::CSC8503::TutorialGame::AddOBBCubeToWorld(const Vector3& position, Vector3 dimensions, float inverseMass)
+{
+	GameObject* cube = new GameObject();
+	OBBVolume* volume = new OBBVolume(dimensions);
 	cube->SetBoundingVolume((CollisionVolume*)volume);
 
 	cube->GetTransform()
@@ -466,9 +527,8 @@ GameObject* TutorialGame::AddBonusToWorld(const Vector3& position) {
 	return apple;
 }
 
-StateGameObject* NCL::CSC8503::TutorialGame::AddStateObjectToWorld(const Vector3 position) {
+StateGameObject* NCL::CSC8503::TutorialGame::AddStateObjectToWorld(VolumeType volumeType, const Vector3 position) {
 	StateGameObject* stateObj = new StateGameObject();
-
 
 	Vector3 sphereSize = Vector3(1, 1, 1);
 	SphereVolume* volume = new SphereVolume(1);
@@ -490,6 +550,7 @@ StateGameObject* NCL::CSC8503::TutorialGame::AddStateObjectToWorld(const Vector3
 
 void TutorialGame::InitDefaultFloor() {
 	AddFloorToWorld(Vector3(0, -20, 0));
+	AddFloorToWorld(Vector3(0, -20, -300));
 }
 
 void TutorialGame::InitGameExamples() {

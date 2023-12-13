@@ -73,3 +73,23 @@ GameObject* NCL::CSC8503::GameObject::getNextObjectInDirection(const GameWorld& 
 		return closestForwardObjOfSelectedObj;
 	}
 }
+
+GameObjectType NCL::CSC8503::GameObject::GetGameObjectType() const {
+	return type;
+}
+
+void NCL::CSC8503::GameObject::SetGameObjectType(GameObjectType type) {
+	this->type = type;
+}
+
+bool GameObject::GetIsAffectedByGravity() const {
+	return isAffectedByGravity;
+}
+
+void GameObject::SetIsAffectedByGravity(bool isAffectedByGravity) {
+	this->isAffectedByGravity = isAffectedByGravity;
+}
+
+void GameObject::SetCollisionCallback(std::function<void()> callback) {
+	this->collisionCallback = callback;
+}

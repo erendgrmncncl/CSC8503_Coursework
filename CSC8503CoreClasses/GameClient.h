@@ -13,12 +13,16 @@ namespace NCL {
 			GameClient();
 			~GameClient();
 
+			int GetPeerID() const;
+
 			bool Connect(uint8_t a, uint8_t b, uint8_t c, uint8_t d, int portNum);
 
 			void SendPacket(GamePacket&  payload);
 
 			void UpdateClient();
 		protected:	
+			int peerID;
+
 			_ENetPeer*	netPeer;
 		};
 	}

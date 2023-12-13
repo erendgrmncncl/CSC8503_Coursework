@@ -36,7 +36,7 @@ NavigationGrid::NavigationGrid(const std::string&filename) : NavigationGrid() {
 			char type = 0;
 			infile >> type;
 			n.type = type;
-			n.position = Vector3((float)(x * nodeSize), 0, (float)(y * nodeSize));
+			n.position = Vector3((float)(x * nodeSize), -15, (float)(y * nodeSize));
 		}
 	}
 	
@@ -62,7 +62,7 @@ NavigationGrid::NavigationGrid(const std::string&filename) : NavigationGrid() {
 					if (n.connected[i]->type == '.') {
 						n.costs[i]		= 1;
 					}
-					if (n.connected[i]->type == 'x') {
+					if (n.connected[i]->type == 'x' || n.connected[i]->type == 'B' || n.connected[i]->type == 'b') {
 						n.connected[i] = nullptr; //actually a wall, disconnect!
 					}
 				}
@@ -150,6 +150,11 @@ bool NavigationGrid::FindPath(const Vector3& from, const Vector3& to, Navigation
 	return false; //open list emptied out with no path!
 }
 
+GridNode* NCL::CSC8503::NavigationGrid::GetAllNodes()
+{
+	return allNodes;
+}
+
 bool NavigationGrid::NodeInList(GridNode* n, std::vector<GridNode*>& list) const {
 	std::vector<GridNode*>::iterator i = std::find(list.begin(), list.end(), n);
 	return i == list.end() ? false : true;
@@ -173,4 +178,16 @@ GridNode*  NavigationGrid::RemoveBestNode(std::vector<GridNode*>& list) const {
 
 float NavigationGrid::Heuristic(GridNode* hNode, GridNode* endNode) const {
 	return (hNode->position - endNode->position).Length();
+}
+
+int NavigationGrid::GetNavGridWidth() {
+	return gridWidth;
+}
+
+int NavigationGrid::GetNavGridHeight() {
+	return gridHeight;
+}
+
+int NavigationGrid::GetNavGridSize() {
+	return nodeSize;
 }

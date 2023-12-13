@@ -1,10 +1,10 @@
 10
 10
 10
-xxxxxxxxxx
-x........x
-x........x
-x....xxxxx
+xxxxxxxxBx
+x.bob...Ex
+x.bBb....x
+x......xxx
 x........x
 xxxxxx...x
 x......xxx

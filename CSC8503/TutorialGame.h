@@ -43,19 +43,22 @@ namespace NCL {
 			void MoveSelectedObject();
 			void DebugObjectMovement();
 			void LockedObjectMovement();
+			void HandleMainMenuTexts();
 
 			void BridgeConstraintTest();
+			virtual void HandleCameraLock();
 
 			GameObject* AddFloorToWorld(const Vector3& position);
 			GameObject* AddSphereToWorld(const Vector3& position, float radius, float inverseMass = 10.0f);
 			GameObject* AddCubeToWorld(const Vector3& position, Vector3 dimensions, float inverseMass = 10.0f);
+			GameObject* AddOBBCubeToWorld(const Vector3& position, Vector3 dimensions, float inverseMass = 10.0f);
 			GameObject* AddCapsuleToWorld(const Vector3& position, float radius, float halfHeight, float inverseMass = 10.f);
 
 			GameObject* AddPlayerToWorld(const Vector3& position);
 			GameObject* AddEnemyToWorld(const Vector3& position);
 			GameObject* AddBonusToWorld(const Vector3& position);
 
-			StateGameObject* AddStateObjectToWorld(const Vector3 position);
+			StateGameObject* AddStateObjectToWorld(VolumeType volumeType, const Vector3 position);
 
 #ifdef USEVULKAN
 			GameTechVulkanRenderer*	renderer;
@@ -69,6 +72,8 @@ namespace NCL {
 
 			bool useGravity;
 			bool inSelectionMode;
+
+			bool isMainMenuScene = false;
 
 			float		forceMagnitude;
 
@@ -88,7 +93,7 @@ namespace NCL {
 
 			//Coursework Additional functionality	
 			GameObject* lockedObject	= nullptr;
-			Vector3 lockedOffset		= Vector3(0, 14, 20);
+			Vector3 lockedOffset		= Vector3(0, 5, -1.f);
 			void LockCameraToObject(GameObject* o) {
 				lockedObject = o;
 			}

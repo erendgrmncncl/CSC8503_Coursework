@@ -24,6 +24,7 @@
 #include "BehaviourSequence.h"
 #include "BehaviourAction.h"
 #include "Coursework.h"
+#include "SceneManager.h"
 
 using namespace NCL;
 using namespace CSC8503;
@@ -113,8 +114,8 @@ void TestPathfinding() {
 	NavigationGrid grid("TestGrid1.txt");
 	NavigationPath outPath;
 
-	Vector3 startPos(80, 0, 10);
-	Vector3 endPos(80, 0, 80);
+	Vector3 startPos(380, 0, -200);
+	Vector3 endPos(200, 0, 200);
 
 	bool found = grid.FindPath(startPos, endPos, outPath);
 
@@ -131,7 +132,6 @@ void DisplayPathfinding() {
 
 		Debug::DrawLine(a, b, Vector4(0, 1, 0, 1));
 	}
-
 }
 
 void TestStateMachine() {
@@ -218,12 +218,16 @@ int main() {
 	w->LockMouseToWindow(true);
 
 	//TutorialGame* g = new TutorialGame();
-	Coursework* courseWorkScene = new Coursework();
+	///Coursework* courseWorkScene = new Coursework();
 	//NetworkedGame* networkedGame = new NetworkedGame();
+
+
+	auto* sceneManager = SceneManager::GetSceneManager();
 	w->GetTimer().GetTimeDeltaSeconds(); //Clear the timer so we don't get a larget first dt!
 
-	TestPathfinding();
-	while (w->UpdateWindow() && !Window::GetKeyboard()->KeyDown(KeyCodes::ESCAPE)) {
+	//TestPathfinding();
+
+	while (w->UpdateWindow() && !sceneManager->GetIsForceQuit()) {
 		float dt = w->GetTimer().GetTimeDeltaSeconds();
 		if (dt > 0.1f) {
 			std::cout << "Skipping large time delta" << std::endl;
@@ -242,10 +246,18 @@ int main() {
 
 		w->SetTitle("Gametech frame time:" + std::to_string(1000.0f * dt));
 
-		DisplayPathfinding();
+		//DisplayPathfinding();
 		//g->UpdateGame(dt);
-		courseWorkScene->UpdateGame(dt);
+		if (sceneManager->GetScenePushdownMachine() != nullptr)
+		{
+			sceneManager->GetScenePushdownMachine()->Update(dt);
+		}
+		if (sceneManager->GetCurrentScene() != nullptr)
+		{
+			sceneManager->GetCurrentScene()->UpdateGame(dt);
+		}
 		//networkedGame->UpdateGame(dt);
 	}
+
 	Window::DestroyGameWindow();
 }

@@ -1,12 +1,21 @@
 #pragma once
 #include "Transform.h"
 #include "CollisionVolume.h"
+#include "RenderObject.h"
 
 using std::vector;
 
 enum Layer {
 	All,
 	Pickable
+};
+
+enum GameObjectType {
+	Static,
+	Objective,
+	Throwable,
+	Player,
+	BridgeOpener
 };
 
 namespace NCL::CSC8503 {
@@ -17,6 +26,7 @@ namespace NCL::CSC8503 {
 
 	class GameObject	{
 	public:
+
 		GameObject(const std::string& name = "");
 		~GameObject();
 
@@ -48,6 +58,10 @@ namespace NCL::CSC8503 {
 			return networkObject;
 		}
 
+		void SetNetworkObject(NetworkObject* object) {
+			networkObject = object;
+		}
+
 		void SetRenderObject(RenderObject* newObject) {
 			renderObject = newObject;
 		}
@@ -61,7 +75,13 @@ namespace NCL::CSC8503 {
 		}
 
 		virtual void OnCollisionBegin(GameObject* otherObject) {
-			//std::cout << "OnCollisionBegin event occured!\n";
+			if (this->type == GameObjectType::Throwable && otherObject->type == GameObjectType::BridgeOpener) {
+				auto* renderer = otherObject->GetRenderObject();
+				renderer->SetColour(Vector4(0, 0, 1, 1));
+				if (otherObject->collisionCallback != nullptr) {
+					otherObject->collisionCallback();
+				}
+			}
 		}
 
 		virtual void OnCollisionEnd(GameObject* otherObject) {
@@ -83,12 +103,22 @@ namespace NCL::CSC8503 {
 		Layer getLayer() const;
 		void setLayer(Layer layerToSet);
 
+
+		GameObjectType GetGameObjectType() const;
+		void SetGameObjectType(GameObjectType type);
+
 		void AttachToAnotherObj(GameObject& obj);
+
+		void SetCollisionCallback(std::function<void()> callback);
+
+		bool GetIsAffectedByGravity() const;
+		void SetIsAffectedByGravity(bool isAffectedByGravity);
 
 		GameObject* getNextObjectInDirection(const GameWorld& world, Vector3 direction);
 
 	protected:
 		Layer				layer = Layer::All;
+		GameObjectType      type = GameObjectType::Static;
 		Transform			transform;
 
 		CollisionVolume*	boundingVolume;
@@ -96,7 +126,10 @@ namespace NCL::CSC8503 {
 		RenderObject*		renderObject;
 		NetworkObject*		networkObject;
 
+		std::function<void()> collisionCallback = nullptr;
+
 		bool		isActive;
+		bool        isAffectedByGravity = true;
 		bool		isAttached = false;
 		int			worldID;
 		std::string	name;
