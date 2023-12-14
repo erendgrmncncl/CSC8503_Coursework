@@ -1,285 +1,285 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503CoreClasses\CMakeFiles\CSC8503CoreClasses.dir\cmake_pch.cxx">
+    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503CoreClasses\CMakeFiles\CSC8503CoreClasses.dir\cmake_pch.cxx">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503CoreClasses\Debug.h">
+    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503CoreClasses\Debug.h">
       <Filter>Header Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503CoreClasses\GameObject.h">
+    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503CoreClasses\GameObject.h">
       <Filter>Header Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503CoreClasses\GameWorld.h">
+    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503CoreClasses\GameWorld.h">
       <Filter>Header Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503CoreClasses\RenderObject.h">
+    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503CoreClasses\RenderObject.h">
       <Filter>Header Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503CoreClasses\Transform.h">
+    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503CoreClasses\Transform.h">
       <Filter>Header Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503CoreClasses\Debug.cpp">
+    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503CoreClasses\Debug.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503CoreClasses\GameObject.cpp">
+    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503CoreClasses\GameObject.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503CoreClasses\GameWorld.cpp">
+    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503CoreClasses\GameWorld.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503CoreClasses\RenderObject.cpp">
+    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503CoreClasses\RenderObject.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503CoreClasses\Transform.cpp">
+    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503CoreClasses\Transform.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503CoreClasses\BehaviourAction.h">
+    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503CoreClasses\BehaviourAction.h">
       <Filter>AI\Behaviour Trees</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503CoreClasses\BehaviourNode.h">
+    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503CoreClasses\BehaviourNode.h">
       <Filter>AI\Behaviour Trees</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503CoreClasses\BehaviourNodeWithChildren.h">
+    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503CoreClasses\BehaviourNodeWithChildren.h">
       <Filter>AI\Behaviour Trees</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503CoreClasses\BehaviourSelector.h">
+    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503CoreClasses\BehaviourSelector.h">
       <Filter>AI\Behaviour Trees</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503CoreClasses\BehaviourSelector.cpp">
+    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503CoreClasses\BehaviourSelector.cpp">
       <Filter>AI\Behaviour Trees</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503CoreClasses\BehaviourSequence.h">
+    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503CoreClasses\BehaviourSequence.h">
       <Filter>AI\Behaviour Trees</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503CoreClasses\BehaviourSequence.cpp">
+    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503CoreClasses\BehaviourSequence.cpp">
       <Filter>AI\Behaviour Trees</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503CoreClasses\PushdownMachine.h">
+    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503CoreClasses\PushdownMachine.h">
       <Filter>AI\Pushdown Automata</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503CoreClasses\PushdownMachine.cpp">
+    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503CoreClasses\PushdownMachine.cpp">
       <Filter>AI\Pushdown Automata</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503CoreClasses\PushdownState.h">
+    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503CoreClasses\PushdownState.h">
       <Filter>AI\Pushdown Automata</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503CoreClasses\PushdownState.cpp">
+    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503CoreClasses\PushdownState.cpp">
       <Filter>AI\Pushdown Automata</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503CoreClasses\State.h">
+    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503CoreClasses\State.h">
       <Filter>AI\State Machine</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503CoreClasses\StateMachine.h">
+    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503CoreClasses\StateMachine.h">
       <Filter>AI\State Machine</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503CoreClasses\StateMachine.cpp">
+    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503CoreClasses\StateMachine.cpp">
       <Filter>AI\State Machine</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503CoreClasses\StateTransition.h">
+    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503CoreClasses\StateTransition.h">
       <Filter>AI\State Machine</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503CoreClasses\NavigationGrid.h">
+    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503CoreClasses\NavigationGrid.h">
       <Filter>AI\Pathfinding</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503CoreClasses\NavigationGrid.cpp">
+    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503CoreClasses\NavigationGrid.cpp">
       <Filter>AI\Pathfinding</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503CoreClasses\NavigationMesh.cpp">
+    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503CoreClasses\NavigationMesh.cpp">
       <Filter>AI\Pathfinding</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503CoreClasses\NavigationMesh.h">
+    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503CoreClasses\NavigationMesh.h">
       <Filter>AI\Pathfinding</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503CoreClasses\NavigationMap.h">
+    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503CoreClasses\NavigationMap.h">
       <Filter>AI\Pathfinding</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503CoreClasses\NavigationPath.h">
+    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503CoreClasses\NavigationPath.h">
       <Filter>AI\Pathfinding</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503CoreClasses\AABBVolume.h">
+    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503CoreClasses\AABBVolume.h">
       <Filter>Collision Detection</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503CoreClasses\CapsuleVolume.h">
+    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503CoreClasses\CapsuleVolume.h">
       <Filter>Collision Detection</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503CoreClasses\CapsuleVolume.cpp">
+    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503CoreClasses\CapsuleVolume.cpp">
       <Filter>Collision Detection</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503CoreClasses\CollisionDetection.h">
+    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503CoreClasses\CollisionDetection.h">
       <Filter>Collision Detection</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503CoreClasses\CollisionDetection.cpp">
+    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503CoreClasses\CollisionDetection.cpp">
       <Filter>Collision Detection</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503CoreClasses\CollisionVolume.h">
+    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503CoreClasses\CollisionVolume.h">
       <Filter>Collision Detection</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503CoreClasses\OBBVolume.h">
+    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503CoreClasses\OBBVolume.h">
       <Filter>Collision Detection</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503CoreClasses\QUADTREE.H">
+    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503CoreClasses\QUADTREE.H">
       <Filter>Collision Detection</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503CoreClasses\QuadTree.cpp">
+    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503CoreClasses\QuadTree.cpp">
       <Filter>Collision Detection</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503CoreClasses\Ray.h">
+    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503CoreClasses\Ray.h">
       <Filter>Collision Detection</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503CoreClasses\SphereVolume.h">
+    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503CoreClasses\SphereVolume.h">
       <Filter>Collision Detection</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503CoreClasses\GameClient.h">
+    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503CoreClasses\GameClient.h">
       <Filter>Networking</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503CoreClasses\GameClient.cpp">
+    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503CoreClasses\GameClient.cpp">
       <Filter>Networking</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503CoreClasses\GameServer.h">
+    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503CoreClasses\GameServer.h">
       <Filter>Networking</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503CoreClasses\GameServer.cpp">
+    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503CoreClasses\GameServer.cpp">
       <Filter>Networking</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503CoreClasses\NetworkBase.h">
+    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503CoreClasses\NetworkBase.h">
       <Filter>Networking</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503CoreClasses\NetworkBase.cpp">
+    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503CoreClasses\NetworkBase.cpp">
       <Filter>Networking</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503CoreClasses\NetworkObject.h">
+    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503CoreClasses\NetworkObject.h">
       <Filter>Networking</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503CoreClasses\NetworkObject.cpp">
+    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503CoreClasses\NetworkObject.cpp">
       <Filter>Networking</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503CoreClasses\NetworkState.h">
+    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503CoreClasses\NetworkState.h">
       <Filter>Networking</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503CoreClasses\NetworkState.cpp">
+    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503CoreClasses\NetworkState.cpp">
       <Filter>Networking</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503CoreClasses\Constraint.h">
+    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503CoreClasses\Constraint.h">
       <Filter>Physics</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503CoreClasses\PositionConstraint.cpp">
+    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503CoreClasses\PositionConstraint.cpp">
       <Filter>Physics</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503CoreClasses\PositionConstraint.h">
+    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503CoreClasses\PositionConstraint.h">
       <Filter>Physics</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503CoreClasses\OrientationConstraint.cpp">
+    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503CoreClasses\OrientationConstraint.cpp">
       <Filter>Physics</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503CoreClasses\OrientationConstraint.h">
+    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503CoreClasses\OrientationConstraint.h">
       <Filter>Physics</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503CoreClasses\PhysicsObject.cpp">
+    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503CoreClasses\PhysicsObject.cpp">
       <Filter>Physics</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503CoreClasses\PhysicsObject.h">
+    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503CoreClasses\PhysicsObject.h">
       <Filter>Physics</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503CoreClasses\PhysicsSystem.cpp">
+    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503CoreClasses\PhysicsSystem.cpp">
       <Filter>Physics</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503CoreClasses\PhysicsSystem.h">
+    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503CoreClasses\PhysicsSystem.h">
       <Filter>Physics</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503CoreClasses\enet\callbacks.c">
+    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503CoreClasses\enet\callbacks.c">
       <Filter>eNet</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503CoreClasses\enet\list.h">
+    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503CoreClasses\enet\list.h">
       <Filter>eNet</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503CoreClasses\enet\list.c">
+    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503CoreClasses\enet\list.c">
       <Filter>eNet</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503CoreClasses\enet\protocol.h">
+    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503CoreClasses\enet\protocol.h">
       <Filter>eNet</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503CoreClasses\enet\protocol.c">
+    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503CoreClasses\enet\protocol.c">
       <Filter>eNet</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503CoreClasses\enet\win32.h">
+    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503CoreClasses\enet\win32.h">
       <Filter>eNet</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503CoreClasses\enet\win32.c">
+    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503CoreClasses\enet\win32.c">
       <Filter>eNet</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503CoreClasses\enet\enet.h">
+    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503CoreClasses\enet\enet.h">
       <Filter>eNet</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503CoreClasses\enet\time.h">
+    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503CoreClasses\enet\time.h">
       <Filter>eNet</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503CoreClasses\enet\types.h">
+    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503CoreClasses\enet\types.h">
       <Filter>eNet</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503CoreClasses\enet\utility.h">
+    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503CoreClasses\enet\utility.h">
       <Filter>eNet</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503CoreClasses\enet\compress.c">
+    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503CoreClasses\enet\compress.c">
       <Filter>eNet</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503CoreClasses\enet\host.c">
+    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503CoreClasses\enet\host.c">
       <Filter>eNet</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503CoreClasses\enet\packet.c">
+    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503CoreClasses\enet\packet.c">
       <Filter>eNet</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503CoreClasses\enet\peer.c">
+    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503CoreClasses\enet\peer.c">
       <Filter>eNet</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503CoreClasses\CMakeFiles\CSC8503CoreClasses.dir\Debug\cmake_pch.hxx">
+    <ClInclude Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503CoreClasses\CMakeFiles\CSC8503CoreClasses.dir\Debug\cmake_pch.hxx">
       <Filter>Precompile Header File</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503CoreClasses\CMakeFiles\CSC8503CoreClasses.dir\Release\cmake_pch.hxx">
+    <ClInclude Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503CoreClasses\CMakeFiles\CSC8503CoreClasses.dir\Release\cmake_pch.hxx">
       <Filter>Precompile Header File</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503CoreClasses\CMakeLists.txt" />
+    <CustomBuild Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503CoreClasses\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="AI">
-      <UniqueIdentifier>{068F3772-873F-3ABA-AF45-C56DB171BAA6}</UniqueIdentifier>
+      <UniqueIdentifier>{2C485999-A61F-3F3A-9D48-D1B0FB191370}</UniqueIdentifier>
     </Filter>
     <Filter Include="AI\Behaviour Trees">
-      <UniqueIdentifier>{BE2ACA13-04CF-3C61-9CB7-8A6733FFE6D1}</UniqueIdentifier>
+      <UniqueIdentifier>{3C2895D0-9362-30E2-9DE2-2BD4F76607E2}</UniqueIdentifier>
     </Filter>
     <Filter Include="AI\Pathfinding">
-      <UniqueIdentifier>{1AB73062-0DBB-3824-AC7E-CF63D2066633}</UniqueIdentifier>
+      <UniqueIdentifier>{4AB7945E-EC9A-3A0A-A953-E4D1858A31F8}</UniqueIdentifier>
     </Filter>
     <Filter Include="AI\Pushdown Automata">
-      <UniqueIdentifier>{7FC058FE-864D-3202-9A3E-F3FDD451FDA7}</UniqueIdentifier>
+      <UniqueIdentifier>{8C6E7414-39F7-398D-A1FA-67B7841A63BE}</UniqueIdentifier>
     </Filter>
     <Filter Include="AI\State Machine">
-      <UniqueIdentifier>{868EFE1E-2D5D-3742-9EA1-A6EB91AFD5CA}</UniqueIdentifier>
+      <UniqueIdentifier>{7E6FDC39-7E14-322A-9FC8-75883229D15D}</UniqueIdentifier>
     </Filter>
     <Filter Include="Collision Detection">
-      <UniqueIdentifier>{6669CBC3-6927-395F-83D1-37BC28F2D680}</UniqueIdentifier>
+      <UniqueIdentifier>{76842334-5B8C-3D43-A5E7-241B924538FE}</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{8DBF7736-5834-3C9B-83C3-5B2A423C0F4D}</UniqueIdentifier>
+      <UniqueIdentifier>{704AE5B8-D664-3E3A-A69A-DF3CEDEC3078}</UniqueIdentifier>
     </Filter>
     <Filter Include="Networking">
-      <UniqueIdentifier>{6B69BCD6-A11B-3100-89EE-9F3E105FFCE2}</UniqueIdentifier>
+      <UniqueIdentifier>{4BC1FE29-9F3E-3CCC-B6FF-C0EECA068FED}</UniqueIdentifier>
     </Filter>
     <Filter Include="Physics">
-      <UniqueIdentifier>{11B5277F-6894-3928-8158-D0E4911A6732}</UniqueIdentifier>
+      <UniqueIdentifier>{967BC86A-C584-3843-847A-B238C2D3BEC2}</UniqueIdentifier>
     </Filter>
     <Filter Include="Precompile Header File">
-      <UniqueIdentifier>{A4D64075-4812-323B-B2FF-9FA9A7D8AA76}</UniqueIdentifier>
+      <UniqueIdentifier>{F78696A2-6DEF-32CF-8CAE-C4F7BF90BA17}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{D95228C3-5BA9-37B4-87D1-A0228C3BA9ED}</UniqueIdentifier>
+      <UniqueIdentifier>{D8D707B4-A320-30CB-8E8C-1363474441F5}</UniqueIdentifier>
     </Filter>
     <Filter Include="eNet">
-      <UniqueIdentifier>{80B71AB4-91FF-300C-92E2-82D6B0AB46B2}</UniqueIdentifier>
+      <UniqueIdentifier>{251A6AE4-45A4-3534-9C0D-5742C5404D50}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

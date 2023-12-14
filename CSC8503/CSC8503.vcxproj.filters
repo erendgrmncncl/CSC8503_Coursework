@@ -1,69 +1,105 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503\CMakeFiles\CSC8503.dir\cmake_pch.cxx">
+    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503\CMakeFiles\CSC8503.dir\cmake_pch.cxx">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503\GameTechRenderer.cpp">
+    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503\GameTechRenderer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503\Main.cpp">
+    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503\Main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503\NetworkedGame.cpp">
+    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503\NetworkedGame.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503\NetworkPlayer.cpp">
+    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503\NetworkPlayer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503\StateGameObject.cpp">
+    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503\StateGameObject.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503\TutorialGame.cpp">
+    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503\TutorialGame.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503\Coursework.cpp">
+    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503\Coursework.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503\Player.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503\CourseworkScenes.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503\SceneManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503\MainMenuScene.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503\CollisionTestScene.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503\Enemy.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503\GameTechRenderer.h">
+    <ClInclude Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503\GameTechRenderer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503\NetworkedGame.h">
+    <ClInclude Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503\NetworkedGame.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503\NetworkPlayer.h">
+    <ClInclude Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503\NetworkPlayer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503\StateGameObject.h">
+    <ClInclude Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503\StateGameObject.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503\TutorialGame.h">
+    <ClInclude Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503\TutorialGame.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503\Coursework.h">
+    <ClInclude Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503\Coursework.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503\CMakeFiles\CSC8503.dir\Debug\cmake_pch.hxx">
+    <ClInclude Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503\Player.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503\CourseworkScenes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503\SceneManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503\MainMenuScene.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503\CollisionTestScene.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503\Enemy.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503\CMakeFiles\CSC8503.dir\Debug\cmake_pch.hxx">
       <Filter>Precompile Header File</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503\CMakeFiles\CSC8503.dir\Release\cmake_pch.hxx">
+    <ClInclude Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503\CMakeFiles\CSC8503.dir\Release\cmake_pch.hxx">
       <Filter>Precompile Header File</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503\CMakeLists.txt" />
+    <CustomBuild Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{8DBF7736-5834-3C9B-83C3-5B2A423C0F4D}</UniqueIdentifier>
+      <UniqueIdentifier>{704AE5B8-D664-3E3A-A69A-DF3CEDEC3078}</UniqueIdentifier>
     </Filter>
     <Filter Include="Precompile Header File">
-      <UniqueIdentifier>{A4D64075-4812-323B-B2FF-9FA9A7D8AA76}</UniqueIdentifier>
+      <UniqueIdentifier>{F78696A2-6DEF-32CF-8CAE-C4F7BF90BA17}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{D95228C3-5BA9-37B4-87D1-A0228C3BA9ED}</UniqueIdentifier>
+      <UniqueIdentifier>{D8D707B4-A320-30CB-8E8C-1363474441F5}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

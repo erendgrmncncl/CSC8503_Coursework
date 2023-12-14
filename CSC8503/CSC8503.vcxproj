@@ -14,7 +14,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{BF1D7A1E-6E75-3A7C-A8CA-59B06AC207E3}</ProjectGuid>
+    <ProjectGuid>{5FD511C4-0474-3829-AA22-FE4D5A71E069}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <WindowsTargetPlatformVersion>10.0.22621.0</WindowsTargetPlatformVersion>
     <Platform>x64</Platform>
@@ -42,13 +42,13 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
     <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\x64\Debug\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\x64\Debug\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">CSC8503.dir\Debug\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">CSC8503</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.exe</TargetExt>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</GenerateManifest>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\x64\Release\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\x64\Release\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">CSC8503.dir\Release\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">CSC8503</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.exe</TargetExt>
@@ -56,7 +56,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503\..\OpenGLRendering;C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503\..\NCLCoreClasses;C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503\..\CSC8503CoreClasses;C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\NCLCoreClasses;C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\OpenGLRendering;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503\..\OpenGLRendering;C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503\..\NCLCoreClasses;C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503\..\CSC8503CoreClasses;C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\NCLCoreClasses;C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\OpenGLRendering;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <ConformanceMode>true</ConformanceMode>
@@ -66,22 +66,22 @@
       <LanguageStandard>stdcpplatest</LanguageStandard>
       <Optimization>Disabled</Optimization>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
-      <PrecompiledHeaderFile>C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Tutorials/CSC8503/CMakeFiles/CSC8503.dir/Debug/cmake_pch.hxx</PrecompiledHeaderFile>
-      <PrecompiledHeaderOutputFile>C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Tutorials/CSC8503/CSC8503.dir/Debug/cmake_pch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderFile>C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Coursework/CSC8503/CMakeFiles/CSC8503.dir/Debug/cmake_pch.hxx</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Coursework/CSC8503/CSC8503.dir/Debug/cmake_pch.pch</PrecompiledHeaderOutputFile>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <SDLCheck>true</SDLCheck>
       <UseFullPaths>false</UseFullPaths>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;UNICODE;_UNICODE;WIN32_LEAN_AND_MEAN;_WINSOCKAPI_;_WINSOCK2API_;_WINSOCK_DEPRECATED_NO_WARNINGS;ASSETROOTLOCATION="C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Tutorials/Assets/";NOMINMAX;CMAKE_INTDIR="Debug"</PreprocessorDefinitions>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;UNICODE;_UNICODE;WIN32_LEAN_AND_MEAN;_WINSOCKAPI_;_WINSOCK2API_;_WINSOCK_DEPRECATED_NO_WARNINGS;ASSETROOTLOCATION="C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Coursework/Assets/";NOMINMAX;CMAKE_INTDIR="Debug"</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
     </ClCompile>
     <ResourceCompile>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;UNICODE;_UNICODE;WIN32_LEAN_AND_MEAN;_WINSOCKAPI_;_WINSOCK2API_;_WINSOCK_DEPRECATED_NO_WARNINGS;ASSETROOTLOCATION=\"C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Tutorials/Assets/\";NOMINMAX;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503\..\OpenGLRendering;C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503\..\NCLCoreClasses;C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503\..\CSC8503CoreClasses;C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\NCLCoreClasses;C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\OpenGLRendering;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;UNICODE;_UNICODE;WIN32_LEAN_AND_MEAN;_WINSOCKAPI_;_WINSOCK2API_;_WINSOCK_DEPRECATED_NO_WARNINGS;ASSETROOTLOCATION=\"C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Coursework/Assets/\";NOMINMAX;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503\..\OpenGLRendering;C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503\..\NCLCoreClasses;C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503\..\CSC8503CoreClasses;C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\NCLCoreClasses;C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\OpenGLRendering;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503\..\OpenGLRendering;C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503\..\NCLCoreClasses;C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503\..\CSC8503CoreClasses;C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\NCLCoreClasses;C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\OpenGLRendering;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503\..\OpenGLRendering;C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503\..\NCLCoreClasses;C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503\..\CSC8503CoreClasses;C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\NCLCoreClasses;C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\OpenGLRendering;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -94,8 +94,8 @@
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Tutorials/x64/Debug/CSC8503.lib</ImportLibrary>
-      <ProgramDataBaseFile>C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Tutorials/x64/Debug/CSC8503.pdb</ProgramDataBaseFile>
+      <ImportLibrary>C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Coursework/x64/Debug/CSC8503.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Coursework/x64/Debug/CSC8503.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
     </Link>
     <ProjectReference>
@@ -104,7 +104,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503\..\OpenGLRendering;C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503\..\NCLCoreClasses;C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503\..\CSC8503CoreClasses;C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\NCLCoreClasses;C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\OpenGLRendering;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503\..\OpenGLRendering;C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503\..\NCLCoreClasses;C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503\..\CSC8503CoreClasses;C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\NCLCoreClasses;C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\OpenGLRendering;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <ConformanceMode>true</ConformanceMode>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -115,22 +115,22 @@
       <LanguageStandard>stdcpplatest</LanguageStandard>
       <Optimization>MaxSpeed</Optimization>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
-      <PrecompiledHeaderFile>C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Tutorials/CSC8503/CMakeFiles/CSC8503.dir/Release/cmake_pch.hxx</PrecompiledHeaderFile>
-      <PrecompiledHeaderOutputFile>C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Tutorials/CSC8503/CSC8503.dir/Release/cmake_pch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderFile>C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Coursework/CSC8503/CMakeFiles/CSC8503.dir/Release/cmake_pch.hxx</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Coursework/CSC8503/CSC8503.dir/Release/cmake_pch.pch</PrecompiledHeaderOutputFile>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <SDLCheck>true</SDLCheck>
       <UseFullPaths>false</UseFullPaths>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;UNICODE;_UNICODE;WIN32_LEAN_AND_MEAN;_WINSOCKAPI_;_WINSOCK2API_;_WINSOCK_DEPRECATED_NO_WARNINGS;ASSETROOTLOCATION="C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Tutorials/Assets/";NOMINMAX;CMAKE_INTDIR="Release"</PreprocessorDefinitions>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;UNICODE;_UNICODE;WIN32_LEAN_AND_MEAN;_WINSOCKAPI_;_WINSOCK2API_;_WINSOCK_DEPRECATED_NO_WARNINGS;ASSETROOTLOCATION="C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Coursework/Assets/";NOMINMAX;CMAKE_INTDIR="Release"</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
     </ClCompile>
     <ResourceCompile>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;UNICODE;_UNICODE;WIN32_LEAN_AND_MEAN;_WINSOCKAPI_;_WINSOCK2API_;_WINSOCK_DEPRECATED_NO_WARNINGS;ASSETROOTLOCATION=\"C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Tutorials/Assets/\";NOMINMAX;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503\..\OpenGLRendering;C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503\..\NCLCoreClasses;C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503\..\CSC8503CoreClasses;C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\NCLCoreClasses;C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\OpenGLRendering;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;UNICODE;_UNICODE;WIN32_LEAN_AND_MEAN;_WINSOCKAPI_;_WINSOCK2API_;_WINSOCK_DEPRECATED_NO_WARNINGS;ASSETROOTLOCATION=\"C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Coursework/Assets/\";NOMINMAX;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503\..\OpenGLRendering;C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503\..\NCLCoreClasses;C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503\..\CSC8503CoreClasses;C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\NCLCoreClasses;C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\OpenGLRendering;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503\..\OpenGLRendering;C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503\..\NCLCoreClasses;C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503\..\CSC8503CoreClasses;C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\NCLCoreClasses;C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\OpenGLRendering;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503\..\OpenGLRendering;C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503\..\NCLCoreClasses;C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503\..\CSC8503CoreClasses;C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\NCLCoreClasses;C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\OpenGLRendering;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -144,9 +144,9 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Tutorials/x64/Release/CSC8503.lib</ImportLibrary>
+      <ImportLibrary>C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Coursework/x64/Release/CSC8503.lib</ImportLibrary>
       <OptimizeReferences>true</OptimizeReferences>
-      <ProgramDataBaseFile>C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Tutorials/x64/Release/CSC8503.pdb</ProgramDataBaseFile>
+      <ProgramDataBaseFile>C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Coursework/x64/Release/CSC8503.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
     </Link>
     <ProjectReference>
@@ -154,11 +154,11 @@
     </ProjectReference>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <CustomBuild Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503\CMakeLists.txt">
+    <CustomBuild Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503\CMakeLists.txt">
       <UseUtf8Encoding>Always</UseUtf8Encoding>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Tutorials/CSC8503/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Coursework/CSC8503/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Tutorials -BC:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Tutorials --check-stamp-file C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Tutorials/CSC8503/CMakeFiles/generate.stamp
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Coursework -BC:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Coursework --check-stamp-file C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Coursework/CSC8503/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -166,12 +166,12 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CMake\Default.cmake;C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CMake\DefaultCXX.cmake;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CMake\Default.cmake;C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CMake\DefaultCXX.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Tutorials/CSC8503/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Coursework/CSC8503/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Tutorials -BC:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Tutorials --check-stamp-file C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Tutorials/CSC8503/CMakeFiles/generate.stamp
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Coursework -BC:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Coursework --check-stamp-file C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Coursework/CSC8503/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -179,92 +179,134 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CMake\Default.cmake;C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CMake\DefaultCXX.cmake;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CMake\Default.cmake;C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CMake\DefaultCXX.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503\CMakeFiles\CSC8503.dir\cmake_pch.cxx">
-      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Tutorials/CSC8503/CMakeFiles/CSC8503.dir/Debug/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503\CMakeFiles\CSC8503.dir\cmake_pch.cxx">
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Coursework/CSC8503/CMakeFiles/CSC8503.dir/Debug/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
-      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Tutorials/CSC8503/CMakeFiles/CSC8503.dir/Debug/cmake_pch.hxx</PrecompiledHeaderFile>
-      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Tutorials/CSC8503/CSC8503.dir/Debug/cmake_pch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Coursework/CSC8503/CMakeFiles/CSC8503.dir/Debug/cmake_pch.hxx</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Coursework/CSC8503/CSC8503.dir/Debug/cmake_pch.pch</PrecompiledHeaderOutputFile>
       <ScanSourceforModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceforModuleDependencies>
-      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Tutorials/CSC8503/CMakeFiles/CSC8503.dir/Release/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Coursework/CSC8503/CMakeFiles/CSC8503.dir/Release/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
-      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Tutorials/CSC8503/CMakeFiles/CSC8503.dir/Release/cmake_pch.hxx</PrecompiledHeaderFile>
-      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Tutorials/CSC8503/CSC8503.dir/Release/cmake_pch.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Coursework/CSC8503/CMakeFiles/CSC8503.dir/Release/cmake_pch.hxx</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Coursework/CSC8503/CSC8503.dir/Release/cmake_pch.pch</PrecompiledHeaderOutputFile>
       <ScanSourceforModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceforModuleDependencies>
     </ClCompile>
-    <ClInclude Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503\GameTechRenderer.h" />
-    <ClInclude Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503\NetworkedGame.h" />
-    <ClInclude Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503\NetworkPlayer.h" />
-    <ClInclude Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503\StateGameObject.h" />
-    <ClInclude Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503\TutorialGame.h" />
-    <ClInclude Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503\Coursework.h" />
-    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503\GameTechRenderer.cpp">
-      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Tutorials/CSC8503/CMakeFiles/CSC8503.dir/Debug/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+    <ClInclude Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503\GameTechRenderer.h" />
+    <ClInclude Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503\NetworkedGame.h" />
+    <ClInclude Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503\NetworkPlayer.h" />
+    <ClInclude Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503\StateGameObject.h" />
+    <ClInclude Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503\TutorialGame.h" />
+    <ClInclude Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503\Coursework.h" />
+    <ClInclude Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503\Player.h" />
+    <ClInclude Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503\CourseworkScenes.h" />
+    <ClInclude Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503\SceneManager.h" />
+    <ClInclude Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503\MainMenuScene.h" />
+    <ClInclude Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503\CollisionTestScene.h" />
+    <ClInclude Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503\Enemy.h" />
+    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503\GameTechRenderer.cpp">
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Coursework/CSC8503/CMakeFiles/CSC8503.dir/Debug/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
       <ScanSourceforModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceforModuleDependencies>
-      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Tutorials/CSC8503/CMakeFiles/CSC8503.dir/Release/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Coursework/CSC8503/CMakeFiles/CSC8503.dir/Release/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
       <ScanSourceforModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceforModuleDependencies>
     </ClCompile>
-    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503\Main.cpp">
-      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Tutorials/CSC8503/CMakeFiles/CSC8503.dir/Debug/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503\Main.cpp">
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Coursework/CSC8503/CMakeFiles/CSC8503.dir/Debug/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
       <ScanSourceforModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceforModuleDependencies>
-      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Tutorials/CSC8503/CMakeFiles/CSC8503.dir/Release/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Coursework/CSC8503/CMakeFiles/CSC8503.dir/Release/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
       <ScanSourceforModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceforModuleDependencies>
     </ClCompile>
-    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503\NetworkedGame.cpp">
-      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Tutorials/CSC8503/CMakeFiles/CSC8503.dir/Debug/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503\NetworkedGame.cpp">
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Coursework/CSC8503/CMakeFiles/CSC8503.dir/Debug/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
       <ScanSourceforModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceforModuleDependencies>
-      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Tutorials/CSC8503/CMakeFiles/CSC8503.dir/Release/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Coursework/CSC8503/CMakeFiles/CSC8503.dir/Release/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
       <ScanSourceforModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceforModuleDependencies>
     </ClCompile>
-    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503\NetworkPlayer.cpp">
-      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Tutorials/CSC8503/CMakeFiles/CSC8503.dir/Debug/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503\NetworkPlayer.cpp">
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Coursework/CSC8503/CMakeFiles/CSC8503.dir/Debug/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
       <ScanSourceforModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceforModuleDependencies>
-      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Tutorials/CSC8503/CMakeFiles/CSC8503.dir/Release/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Coursework/CSC8503/CMakeFiles/CSC8503.dir/Release/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
       <ScanSourceforModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceforModuleDependencies>
     </ClCompile>
-    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503\StateGameObject.cpp">
-      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Tutorials/CSC8503/CMakeFiles/CSC8503.dir/Debug/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503\StateGameObject.cpp">
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Coursework/CSC8503/CMakeFiles/CSC8503.dir/Debug/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
       <ScanSourceforModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceforModuleDependencies>
-      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Tutorials/CSC8503/CMakeFiles/CSC8503.dir/Release/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Coursework/CSC8503/CMakeFiles/CSC8503.dir/Release/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
       <ScanSourceforModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceforModuleDependencies>
     </ClCompile>
-    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503\TutorialGame.cpp">
-      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Tutorials/CSC8503/CMakeFiles/CSC8503.dir/Debug/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503\TutorialGame.cpp">
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Coursework/CSC8503/CMakeFiles/CSC8503.dir/Debug/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
       <ScanSourceforModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceforModuleDependencies>
-      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Tutorials/CSC8503/CMakeFiles/CSC8503.dir/Release/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Coursework/CSC8503/CMakeFiles/CSC8503.dir/Release/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
       <ScanSourceforModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceforModuleDependencies>
     </ClCompile>
-    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503\Coursework.cpp">
-      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Tutorials/CSC8503/CMakeFiles/CSC8503.dir/Debug/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503\Coursework.cpp">
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Coursework/CSC8503/CMakeFiles/CSC8503.dir/Debug/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
       <ScanSourceforModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceforModuleDependencies>
-      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Tutorials/CSC8503/CMakeFiles/CSC8503.dir/Release/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Coursework/CSC8503/CMakeFiles/CSC8503.dir/Release/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
       <ScanSourceforModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceforModuleDependencies>
     </ClCompile>
-    <ClInclude Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503\CMakeFiles\CSC8503.dir\Debug\cmake_pch.hxx" />
-    <ClInclude Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503\CMakeFiles\CSC8503.dir\Release\cmake_pch.hxx" />
+    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503\Player.cpp">
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Coursework/CSC8503/CMakeFiles/CSC8503.dir/Debug/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <ScanSourceforModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceforModuleDependencies>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Coursework/CSC8503/CMakeFiles/CSC8503.dir/Release/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <ScanSourceforModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceforModuleDependencies>
+    </ClCompile>
+    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503\CourseworkScenes.cpp">
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Coursework/CSC8503/CMakeFiles/CSC8503.dir/Debug/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <ScanSourceforModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceforModuleDependencies>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Coursework/CSC8503/CMakeFiles/CSC8503.dir/Release/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <ScanSourceforModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceforModuleDependencies>
+    </ClCompile>
+    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503\SceneManager.cpp">
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Coursework/CSC8503/CMakeFiles/CSC8503.dir/Debug/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <ScanSourceforModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceforModuleDependencies>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Coursework/CSC8503/CMakeFiles/CSC8503.dir/Release/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <ScanSourceforModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceforModuleDependencies>
+    </ClCompile>
+    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503\MainMenuScene.cpp">
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Coursework/CSC8503/CMakeFiles/CSC8503.dir/Debug/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <ScanSourceforModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceforModuleDependencies>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Coursework/CSC8503/CMakeFiles/CSC8503.dir/Release/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <ScanSourceforModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceforModuleDependencies>
+    </ClCompile>
+    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503\CollisionTestScene.cpp">
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Coursework/CSC8503/CMakeFiles/CSC8503.dir/Debug/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <ScanSourceforModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceforModuleDependencies>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Coursework/CSC8503/CMakeFiles/CSC8503.dir/Release/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <ScanSourceforModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceforModuleDependencies>
+    </ClCompile>
+    <ClCompile Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503\Enemy.cpp">
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Coursework/CSC8503/CMakeFiles/CSC8503.dir/Debug/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <ScanSourceforModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceforModuleDependencies>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/Users/erenl/git-repos/CompGameEngineering/CSC8503_Coursework/CSC8503/CMakeFiles/CSC8503.dir/Release/cmake_pch.hxx;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <ScanSourceforModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceforModuleDependencies>
+    </ClCompile>
+    <ClInclude Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503\CMakeFiles\CSC8503.dir\Debug\cmake_pch.hxx" />
+    <ClInclude Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503\CMakeFiles\CSC8503.dir\Release\cmake_pch.hxx" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\ZERO_CHECK.vcxproj">
-      <Project>{130D4256-097B-3650-87B6-996B09CF5C1B}</Project>
+    <ProjectReference Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\ZERO_CHECK.vcxproj">
+      <Project>{187765DF-BF15-3CFE-A125-78821516367A}</Project>
       <Name>ZERO_CHECK</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </ProjectReference>
-    <ProjectReference Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\CSC8503CoreClasses\CSC8503CoreClasses.vcxproj">
-      <Project>{48A4C139-404F-34A7-A349-20D088DAFAD4}</Project>
+    <ProjectReference Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\CSC8503CoreClasses\CSC8503CoreClasses.vcxproj">
+      <Project>{79827F8B-D690-398D-AC02-057EA39BB3D8}</Project>
       <Name>CSC8503CoreClasses</Name>
     </ProjectReference>
-    <ProjectReference Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\NCLCoreClasses\NCLCoreClasses.vcxproj">
-      <Project>{A0A0B127-8D9F-37BF-9108-5A17279CBE85}</Project>
+    <ProjectReference Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\NCLCoreClasses\NCLCoreClasses.vcxproj">
+      <Project>{E786ABB9-D154-3F52-AC54-1025805B58F7}</Project>
       <Name>NCLCoreClasses</Name>
     </ProjectReference>
-    <ProjectReference Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Tutorials\OpenGLRendering\OpenGLRendering.vcxproj">
-      <Project>{AC1A35FE-C5D3-32AA-BBAE-7F8554A2D29D}</Project>
+    <ProjectReference Include="C:\Users\erenl\git-repos\CompGameEngineering\CSC8503_Coursework\OpenGLRendering\OpenGLRendering.vcxproj">
+      <Project>{BF7BA946-3E40-35DA-B1EB-6F0231929F1E}</Project>
       <Name>OpenGLRendering</Name>
     </ProjectReference>
   </ItemGroup>
