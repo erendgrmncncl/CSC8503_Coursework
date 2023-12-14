@@ -6,6 +6,8 @@
 #include "PhysicsObject.h"
 #include "Debug.h"
 #include "Window.h"
+#include "SceneManager.h"
+#include "Coursework.h"
 #include <iostream>
 
 namespace {
@@ -199,8 +201,12 @@ void NCL::CSC8503::Enemy::ChasePlayer(float dt) {
 }
 
 void NCL::CSC8503::Enemy::OnCollisionBegin(GameObject* otherObject){
-	if (otherObject->GetGameObjectType() == GameObjectType::Player ){
+	if (otherObject->GetGameObjectType() == GameObjectType::Player && !isStunned ){
 		isChasingPlayer = false;
+		auto* gameScene = (Coursework*)SceneManager::GetSceneManager()->GetCurrentScene();
+		if (gameScene != nullptr){
+			gameScene->SetIsGameEnded(true);
+		}
 	}
 	else if (otherObject->GetGameObjectType() == GameObjectType::Throwable) {
 		isStunned = true;
@@ -224,9 +230,15 @@ void NCL::CSC8503::Enemy::HandleEnemy(float dt, GameWorld& world) {
 	}
 	
 	if (isStunned) {
+
+		Debug::Print("Enemy is stunned! ", Vector2(65, 20), Vector4(1,0,0,1));
 		stunTimer += dt;
 		if (stunTimer >= STUN_TIME) {
 			isStunned = false;
 		}
+	}
+	else{
+
+		Debug::Print("Enemy is chasing! ", Vector2(65, 20), Vector4(1, 0, 0, 1));
 	}
 }

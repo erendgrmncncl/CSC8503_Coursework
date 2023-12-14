@@ -3,6 +3,7 @@
 #include "Window.h"
 #include "SceneManager.h"
 #include "NetworkedGame.h"
+#include "Coursework.h"
 
 void NCL::CSC8503::MainMenuSceneState::OnAwake(){	
 	SceneManager::GetSceneManager()->SetCurrentScene(Scene::MainMenu);
@@ -60,6 +61,7 @@ NCL::CSC8503::PushdownState::PushdownResult NCL::CSC8503::GameSceneState::OnUpda
 
 void NCL::CSC8503::GameSceneState::OnAwake() {
 	SceneManager::GetSceneManager()->SetCurrentScene(Scene::GameScene);
+	auto* gameScene = (Coursework*)(SceneManager::GetSceneManager()->GetCurrentScene());
 }
 
 NCL::CSC8503::PushdownState::PushdownResult NCL::CSC8503::ServerState::OnUpdate(float dt, PushdownState** newState) {

@@ -92,6 +92,31 @@ void NCL::CSC8503::CollisionTestScene::AddCollisionTestObjToWorld(VolumeType vol
 	stateObj->SetRenderObject(new RenderObject(&stateObj->GetTransform(), meshToAttach, basicTex, basicShader));
 	stateObj->SetPhysicsObject(new PhysicsObject(&stateObj->GetTransform(), stateObj->GetBoundingVolume()));
 
+	Vector4 colour;
+	switch (volume->type)
+	{
+	case VolumeType::AABB: {
+		colour = Vector4(1, 0, 0, 1);
+		break;
+	}
+	case VolumeType::OBB: {
+		colour = Vector4(0, 1, 1, 1);
+		break;
+	}
+	case VolumeType::Capsule:{
+		colour = Vector4(0, 0, 1, 1);
+		break;
+	}
+	case VolumeType::Sphere: {
+		colour = Vector4(0, 1, 0, 1);
+		break;
+	}
+	default:
+		break;
+	}
+
+	stateObj->GetRenderObject()->SetColour(colour);
+
 	stateObj->GetPhysicsObject()->SetInverseMass(10.f);
 	stateObj->GetPhysicsObject()->InitSphereInertia();
 

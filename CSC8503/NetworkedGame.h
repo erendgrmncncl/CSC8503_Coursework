@@ -11,6 +11,7 @@ namespace NCL {
 		
 		struct FullPacket;
 		struct ClientPlayerInputPacket;
+		struct AddPlayerScorePacket;
 
 		class NetworkedGame : public Coursework, public PacketReceiver {
 		public:
@@ -30,6 +31,10 @@ namespace NCL {
 
 			bool GetIsGameStarted() const;
 			void SetIsGameStarted(bool isGameStarted);
+
+			void HandleHighScoreMenu();
+
+			void CollectObjective(GameObject* objective, int playerId);
 
 			GameClient* GetClient();
 			GameServer* GetServer();
@@ -55,7 +60,11 @@ namespace NCL {
 
 			void HandleFullPacket(FullPacket* fullPacket );
 
+			void HandleAddPlayerScorePacket(AddPlayerScorePacket* packet);
+
 			void SyncPlayerList();
+
+			void InitObjective(const Vector3& position) override;
 
 			std::map<int, int> stateIDs;
 
@@ -69,6 +78,8 @@ namespace NCL {
 			std::vector<int> playerList;
 			std::map<int, NetworkPlayer*> serverPlayers;
 			GameObject* localPlayer;
+
+			int networkObjectCache = 10;
 		};
 	}
 }

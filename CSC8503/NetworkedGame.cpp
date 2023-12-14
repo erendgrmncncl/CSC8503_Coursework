@@ -57,6 +57,7 @@ void NetworkedGame::StartAsClient(char a, char b, char c, char d) {
 	thisClient->RegisterPacketHandler(String_Message, this);
 	thisClient->RegisterPacketHandler(Game_State, this);
 	thisClient->RegisterPacketHandler(BasicNetworkMessages::SyncPlayers, this);
+	thisClient->RegisterPacketHandler(BasicNetworkMessages::AddPlayerScore, this);
 }
 
 void NetworkedGame::UpdateGame(float dt) {
@@ -76,6 +77,7 @@ void NetworkedGame::UpdateGame(float dt) {
 		}
 	}
 	if (isGameStarted) {
+		HandleHighScoreMenu();
 		TutorialGame::UpdateGame(dt);
 		for (auto const& serverPlayer : serverPlayers) {
 			if (serverPlayer.second != nullptr) {
@@ -205,6 +207,9 @@ void NCL::CSC8503::NetworkedGame::InitWorld() {
 
 	InitDefaultFloor();
 	InitWorldGrid();
+	for (int i = 0; i < 6; i++){
+		InitObjective(Vector3(0 + (i * 3), -15, 10));
+	}
 	SpawnPlayers();
 }
 
@@ -212,7 +217,7 @@ void NCL::CSC8503::NetworkedGame::HandleClientPlayerInput(ClientPlayerInputPacke
 	int playerIndex = GetPlayerPeerID(playerPeerID);
 	auto* playerToHandle = serverPlayers[playerIndex];
 
-	playerToHandle->SetClientInput(packet->movementVec);
+	playerToHandle->SetClientInput(packet->movementVec, packet->isTriggeredActionButton, packet->rayPosition, packet->rayDirection);
 }
 
 void NetworkedGame::SpawnPlayers() {
@@ -234,6 +239,8 @@ void NetworkedGame::SpawnPlayers() {
 	{
 		localPlayer = serverPlayers[GetPlayerPeerID()];
 	}
+
+	localPlayer->GetRenderObject()->SetVisibility(false);
 
 	player = (Player*)localPlayer;
 	LockCameraToObject(localPlayer);
@@ -274,7 +281,13 @@ void NCL::CSC8503::NetworkedGame::HandleFullPacket(NCL::CSC8503::FullPacket* ful
 		if (networkObjects[i]->GetNetworkID() == fullPacket->objectID) {
 			networkObjects[i]->ReadPacket(*fullPacket);
 		}
+
+
 	}
+}
+
+void NCL::CSC8503::NetworkedGame::HandleAddPlayerScorePacket(AddPlayerScorePacket* packet) {
+	serverPlayers[GetPlayerPeerID(packet->playerId)]->SetScore(packet->score);
 }
 
 void NCL::CSC8503::NetworkedGame::SyncPlayerList(){
@@ -292,6 +305,17 @@ void NCL::CSC8503::NetworkedGame::SyncPlayerList(){
 
 	SyncPlayerListPacket packet(playerList);
 	thisServer->SendGlobalPacket(packet);
+}
+
+void NCL::CSC8503::NetworkedGame::InitObjective(const Vector3& position) {
+	auto* collectible = AddSphereToWorld(position, 3.f, 0.f);
+	collectible->setLayer(Layer::Pickable);
+	collectible->SetGameObjectType(GameObjectType::Objective);
+	collectible->GetRenderObject()->SetColour(Vector4(1, 0.5, 1, 1));
+	auto* networkObj = new NetworkObject(*collectible, networkObjectCache);
+	collectible->SetNetworkObject(networkObj);
+	networkObjects.push_back(networkObj);
+	networkObjectCache++;
 }
 
 void NetworkedGame::StartLevel() {
@@ -328,6 +352,11 @@ void NetworkedGame::ReceivePacket(int type, GamePacket* payload, int source) {
 			HandleClientPlayerInput(packet, source + 1);
 			break;
 		}
+		case BasicNetworkMessages::AddPlayerScore: {
+			AddPlayerScorePacket* packet = (AddPlayerScorePacket*)payload;
+			HandleAddPlayerScorePacket(packet);
+			break;
+		}
 	}
 }
 
@@ -356,6 +385,30 @@ void NCL::CSC8503::NetworkedGame::SetIsGameStarted(bool isGameStarted) {
 	if (isGameStarted){
 		StartLevel();
 	}
+}
+
+void NCL::CSC8503::NetworkedGame::HandleHighScoreMenu() {
+	if (Window::GetKeyboard()->KeyDown(KeyCodes::TAB)) {
+		float startY = 5;
+		for (int i = 0; i < serverPlayers.size(); i++) {
+			if (serverPlayers[i] == nullptr || serverPlayers[i]->GetPlayerNum() == -1)	{
+				return;
+			}
+			std::string strToWrite = "Player " + std::to_string(i) + ": " + std::to_string(serverPlayers[i]->GetScore());
+			Debug::Print(strToWrite, Vector2(10, startY));
+			startY += 5;
+		}
+	}
+}
+
+void NCL::CSC8503::NetworkedGame::CollectObjective(GameObject* objective, int playerId){
+	int playerScore = serverPlayers[GetPlayerPeerID(playerId)]->GetScore();
+	int newScore = playerScore + 1;
+	serverPlayers[GetPlayerPeerID(playerId)]->SetScore(newScore);
+	world->RemoveGameObject(objective);
+
+	AddPlayerScorePacket packet(playerId, newScore);
+	thisServer->SendGlobalPacket(packet);
 }
 
 GameClient* NCL::CSC8503::NetworkedGame::GetClient() {

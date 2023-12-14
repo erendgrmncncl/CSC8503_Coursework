@@ -17,7 +17,8 @@ enum BasicNetworkMessages {
 	Shutdown,
 	Game_State,
 	SyncPlayers,
-	ClientPlayerInput
+	ClientPlayerInput,
+	AddPlayerScore
 };
 
 

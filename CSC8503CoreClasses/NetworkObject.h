@@ -2,6 +2,7 @@
 #include "GameObject.h"
 #include "NetworkBase.h"
 #include "NetworkState.h"
+#include "Ray.h"
 
 namespace NCL::CSC8503 {
 	class GameObject;
@@ -67,11 +68,30 @@ namespace NCL::CSC8503 {
 
 	struct ClientPlayerInputPacket : public GamePacket {
 		Vector3 movementVec;
-		ClientPlayerInputPacket(Vector3 vec) {
+		bool isTriggeredActionButton;
+		Vector3 rayPosition;
+		Vector3 rayDirection;
+		ClientPlayerInputPacket(Vector3 vec, bool isActionKeyPressed, Vector3 rayPos, Vector3 rayDirection) {
 			type = ClientPlayerInput;
 			size = sizeof(ClientPlayerInputPacket);
 
 			movementVec = vec;
+			isTriggeredActionButton = isActionKeyPressed;
+			this->rayPosition = rayPos;
+			this->rayDirection = rayDirection;
+		}
+	};
+
+	struct AddPlayerScorePacket : public GamePacket {
+		int playerId;
+		int score;
+
+		AddPlayerScorePacket(int playerId, int score) {
+			type = AddPlayerScore;
+			size = sizeof(AddPlayerScorePacket);
+
+			this->playerId = playerId;
+			this->score = score;
 		}
 	};
 

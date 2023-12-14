@@ -1,11 +1,12 @@
 #include "StateMachine.h"
 #include "State.h"
 #include "StateTransition.h"
-
+#include "../CSC8503/StateGameObject.h"
 using namespace NCL::CSC8503;
 
-StateMachine::StateMachine()	{
+StateMachine::StateMachine(StateGameObject* object)	{
 	activeState = nullptr;
+	stateObj = object;
 }
 
 StateMachine::~StateMachine()	{
@@ -30,7 +31,7 @@ void StateMachine::AddTransition(StateTransition* t) {
 
 void StateMachine::Update(float dt) {
 	if (activeState) {
-		activeState->Update(dt);
+		activeState->Update(dt, stateObj);
 	
 		//Get the transition set starting from this state node;
 		std::pair<TransitionIterator, TransitionIterator> range = allTransitions.equal_range(activeState);

@@ -2,7 +2,8 @@
 
 namespace NCL {
 	namespace CSC8503 {
-		typedef std::function<void(float)> StateUpdateFunction;
+		class StateGameObject;
+		typedef std::function<void(float, StateGameObject* )> StateUpdateFunction;
 
 		class  State		{
 		public:
@@ -10,9 +11,9 @@ namespace NCL {
 			State(StateUpdateFunction someFunc) {
 				func		= someFunc;
 			}
-			void Update(float dt)  {
+			void Update(float dt, StateGameObject* object = nullptr)  {
 				if (func != nullptr) {
-					func(dt);
+					func(dt, object);
 				}
 			}
 		protected:

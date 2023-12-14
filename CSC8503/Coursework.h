@@ -14,18 +14,28 @@ namespace NCL {
 			~Coursework();
 
 			void UpdateGame(float dt) override;
-			void CollectObjective(GameObject* objective);
+			virtual void CollectObjective(GameObject* objective);
+			
+			void SetIsGameEnded(bool state);
+
+			void RestartGame();
+
 		protected:
 			int score = 0;
+			
 			bool isCameraAttachedToPlayer = true;
 			bool isNetworkGame = false;
+			bool isGameEnded = false;
+
 			Player* player;
 			NavigationGrid* worldGrid;
 			Enemy* mazeGuard;
 			Enemy* bridgeGuard;
 
 			std::vector<Vector3> testNodes;
+			std::vector<StateGameObject*> traps;
 
+			bool CheckIsPlayerInStartingArea();
 			void InitialiseAssets() override;
 			void InitCamera() override;
 			void UpdateKeys() override;
@@ -38,13 +48,15 @@ namespace NCL {
 			void InitBridge(const Vector3& position);
 			void InitWorldGrid();
 			void InitBridgeOpener(const Vector3& position);
-			void InitObjective(const Vector3& position);
+			void SpawnThrowable(const Vector3& position);
+			virtual void InitObjective(const Vector3& position);
+
+			StateGameObject* SpawnTrap(const Vector3& position);
 
 			void ToggleCameraMode();
 			void HandleCameraModeControls();
 			void TestPathFinding();
 			void DisplayPathFinding();
-
 
 			void CreateBrickWall(Vector3& position, Vector3& brickDimensions, bool isHorizontal, int width, int height);
 		};

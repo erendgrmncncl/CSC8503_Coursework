@@ -6,17 +6,25 @@
 #include "PositionConstraint.h"
 #include "OrientationConstraint.h"
 #include "Enemy.h"
+#include "State.h"
+#include "StateTransition.h"
 
 namespace {
 	constexpr const char OBJECTIVE_TYPE_NODE = 'o';
 	constexpr const char OBSTACLE_TYPE_NODE = 'x';
-	constexpr const int FINISH_SCORE = 1;
+	constexpr const int FINISH_SCORE = 2;
+
+	constexpr const float PLAYER_START_POS_X = 80;
+	constexpr const float PLAYER_START_POS_Z = 78;
+
+	constexpr const float PLAYER_ZONE_THRESHOLD = 3.f;
 }
 
 NCL::CSC8503::Coursework::Coursework(bool isNetwork) : TutorialGame(false) {
 	InitialiseAssets();
 	world->GetMainCamera().SetFreeMode(false);
 	isNetworkGame = isNetwork;
+	isGameEnded = false;
 	if (!isNetwork) {
 		InitCamera();
 		InitWorld();
@@ -29,7 +37,29 @@ NCL::CSC8503::Coursework::~Coursework() {
 
 void NCL::CSC8503::Coursework::UpdateGame(float dt)
 {
+	if (Window::GetKeyboard()->KeyPressed(KeyCodes::R)) {
+		RestartGame();
+	}
+	//TODO(eren.deg)
+	if (score >= FINISH_SCORE && CheckIsPlayerInStartingArea()) {
+		auto* window = Window::GetWindow();
+		Vector2i screenSizeVec = window->GetScreenSize();
+		Debug::Print("YOU WIN! MISCHIEF MANAGED! ", Vector2(50,50));
+		Debug::Print("Press R To restart, ESC to return main menu ", Vector2(50,65));
+		renderer->Render();
+		return;
+	}
+	if (isGameEnded) {
+		auto* window = Window::GetWindow();
+		Vector2i screenSizeVec = window->GetScreenSize();
+		Debug::Print("YOU LOST!", Vector2(50,50));
+		Debug::Print("Press R To restart, ESC to return main menu ", Vector2(65, 10));
+		renderer->Render();
+		return;
+	}
+
 	TutorialGame::UpdateGame(dt);
+	Debug::Print("Score: " + std::to_string(score) + "/" + std::to_string(FINISH_SCORE), Vector2(10, 65));
 	if (mazeGuard != nullptr && player != nullptr){
 		TestPathFinding();
 
@@ -43,9 +73,17 @@ void NCL::CSC8503::Coursework::UpdateGame(float dt)
 	if (mazeGuard != nullptr){
 		mazeGuard->HandleEnemy(dt, *world);
 	}
+	if (traps.size() != 0 ){
+		for (auto* trap : traps) {
+			if (trap != nullptr) {
+				trap->Update(dt);
+			}
+		}
+	}
 
 	HandleCameraModeControls();
 	DisplayPathFinding();
+
 }
 
 void NCL::CSC8503::Coursework::InitWorldGrid() {
@@ -82,7 +120,7 @@ void NCL::CSC8503::Coursework::InitWorldGrid() {
 				CreateBrickWall(startPos, brickDimensions, false, 4, 5);
 			}
 			else if ((char)n.type == 'E') {
-				Vector3 spawnPos = Vector3(startPosX + (x * gridSize), -15, startPosZ + (y * gridSize));
+				Vector3 spawnPos = Vector3(startPosX + (x * gridSize), -15.f, startPosZ + (y * gridSize));
 				InitMazeGuard(spawnPos);
 			}
 		}
@@ -96,10 +134,68 @@ void NCL::CSC8503::Coursework::InitBridgeOpener(const Vector3& position) {
 		InitBridge(Vector3(2.f, -19.f, -95.f));
 	});
 }
+void NCL::CSC8503::Coursework::SpawnThrowable(const Vector3& position) {
+	auto* throwable = AddSphereToWorld(position, 1.5f);
+	throwable->setLayer(Layer::Pickable);
+	throwable->SetGameObjectType(GameObjectType::Throwable);
+	throwable->GetRenderObject()->SetColour(Vector4(1,1,0,1));
+}
 void NCL::CSC8503::Coursework::InitObjective(const Vector3& position) {
-	auto* collectible = AddSphereToWorld(position, 1.f, 0.f);
+	auto* collectible = AddSphereToWorld(position, 3.f, 0.f);
 	collectible->setLayer(Layer::Pickable);
 	collectible->SetGameObjectType(GameObjectType::Objective);
+	collectible->GetRenderObject()->SetColour(Vector4(1, 0.5, 1, 1));
+}
+StateGameObject* NCL::CSC8503::Coursework::SpawnTrap(const Vector3& position) {
+
+	std::vector<State*> states;
+	std::vector<StateTransition*> stateTransitions;
+	StateGameObject* stateObj = new StateGameObject(false);
+
+	Vector3 dimensions = Vector3(10, 8, 4);
+	OBBVolume* volume = new OBBVolume(dimensions);
+	stateObj->SetBoundingVolume((CollisionVolume*)volume);
+
+	stateObj->GetTransform()
+		.SetScale(dimensions)
+		.SetPosition(position);
+
+	stateObj->SetRenderObject(new RenderObject(&stateObj->GetTransform(), cubeMesh, basicTex, basicShader));
+	stateObj->SetPhysicsObject(new PhysicsObject(&stateObj->GetTransform(), stateObj->GetBoundingVolume()));
+
+	stateObj->GetPhysicsObject()->SetInverseMass(1.f);
+	stateObj->SetIsAffectedByGravity(false);
+	stateObj->GetPhysicsObject()->InitSphereInertia();
+
+	world->AddGameObject(stateObj);
+
+	State* stateA = new State([&](float dt, StateGameObject* object)-> void {
+		object->GetPhysicsObject()->AddForce({ -10, 0,0 });
+	});
+
+	State* stateB = new State([&](float dt, StateGameObject* object)->void {
+		object->GetPhysicsObject()->AddForce({ 10, 0,0 });
+	});
+
+	states.push_back(stateA);
+	states.push_back(stateB);
+
+	StateTransition* stateTransitionAB = new StateTransition(stateA, stateB, [&]()-> bool {
+		return stateObj->GetTransform().GetPosition().x >= 50.f;
+	});
+
+	StateTransition* stateTransitionBA = new StateTransition(stateB, stateA, [&]()->bool {
+		return stateObj->GetTransform().GetPosition().x <= -50.f;
+	});
+
+	stateTransitions.push_back(stateTransitionAB);
+	stateTransitions.push_back(stateTransitionBA);
+
+
+	stateObj->AddStates(states);
+	stateObj->AddStateTransitions(stateTransitions);
+
+	return stateObj;
 }
 void NCL::CSC8503::Coursework::TestPathFinding(){
 	NavigationPath outPath;
@@ -123,6 +219,12 @@ void NCL::CSC8503::Coursework::DisplayPathFinding(){
 
 		Debug::DrawLine(a, b, Vector4(0, 1, 0, 1));
 	}
+}
+
+void NCL::CSC8503::Coursework::RestartGame() {
+	score = 0;
+	isGameEnded = false;
+	InitWorld();
 }
 
 void NCL::CSC8503::Coursework::CreateBrickWall(Vector3& position, Vector3& brickDimensions, bool isHorizontal, int width, int height){
@@ -153,10 +255,21 @@ void NCL::CSC8503::Coursework::CreateBrickWall(Vector3& position, Vector3& brick
 void NCL::CSC8503::Coursework::CollectObjective(GameObject* objective){
 	score++;
 	world->RemoveGameObject(objective);
-	if (score == FINISH_SCORE)
-	{
-		//TODO(eren.degirmenci): end game.
+}
+
+void NCL::CSC8503::Coursework::SetIsGameEnded(bool state){
+	isGameEnded = state;
+}
+
+bool NCL::CSC8503::Coursework::CheckIsPlayerInStartingArea() {
+	Vector3 playerPos = player->GetTransform().GetPosition();
+	bool isPlayerXIsInStartingArea = playerPos.x <= PLAYER_START_POS_X + PLAYER_ZONE_THRESHOLD && playerPos.x >= PLAYER_START_POS_X - PLAYER_ZONE_THRESHOLD;
+	bool isPlayerZIsInStartingArea = playerPos.z <= PLAYER_START_POS_Z + PLAYER_ZONE_THRESHOLD && playerPos.z >= PLAYER_START_POS_Z - PLAYER_ZONE_THRESHOLD;
+	if (isPlayerXIsInStartingArea && isPlayerZIsInStartingArea ){
+		return true;
 	}
+
+	return false;
 }
 
 void NCL::CSC8503::Coursework::InitialiseAssets() {
@@ -188,26 +301,33 @@ void NCL::CSC8503::Coursework::InitWorld()
 {
 	world->ClearAndErase();
 	physics->Clear();
+	InitDefaultFloor();
 	InitPlayer();
 	InitGameExamples();
-	InitDefaultFloor();
+
 	InitBridgeOpener(Vector3(30.f, 0.f, -201.f));
+
+	//Second Objective
 	InitObjective(Vector3(0.f, -15.f, -235.f));
+
+	//auto* trap = SpawnTrap(Vector3(0, -15, -75));
+	//traps.push_back(trap);
+	
 	InitWorldGrid();
 
-	//TEST
+
+	//Throwables
 	float startZ = 80.f;
 	float startX = 85.f;
-	for (int i = 0; i < 5; i++){
-
-		auto* throwableTest = AddSphereToWorld(Vector3(startX, -15, startZ), 1.f);
-		throwableTest->setLayer(Layer::Pickable);
-		throwableTest->SetGameObjectType(GameObjectType::Throwable);
+	for (int i = 0; i < 10; i++){
+		SpawnThrowable(Vector3(startX, -15, startZ));
 		startX -= 5.f;
+		if (i == 4){
+			startX = -10.f;
+			startZ = -90.f;
+		}
 	}
 	//
-
-
 }
 
 void NCL::CSC8503::Coursework::HandleCameraLock(){
@@ -236,16 +356,18 @@ void NCL::CSC8503::Coursework::HandleCameraLock(){
 }
 
 void NCL::CSC8503::Coursework::InitPlayer() {
-	player = new Player(Vector3(60, -15, 60));
+	player = new Player(Vector3(PLAYER_START_POS_X, -15, PLAYER_START_POS_Z));
 	player->SetGameObjectType(GameObjectType::Player);
 	player->SetRenderObject(new RenderObject(&player->GetTransform(), enemyMesh, nullptr, basicShader));
+	player->GetRenderObject()->SetVisibility(false);
 	world->AddGameObject(player);
 	LockCameraToObject(player);
 }
 
 void NCL::CSC8503::Coursework::InitMazeGuard(const Vector3& position) {
-	mazeGuard = new Enemy(position, 5.f, EnemyType::MazeGuard, *player);
+	mazeGuard = new Enemy(position, 5.f, EnemyType::MazeGuard, *player, 0);
 	mazeGuard->SetRenderObject(new RenderObject(&mazeGuard->GetTransform(), charMesh, nullptr, basicShader));
+	mazeGuard->GetRenderObject()->SetColour(Vector4(1, 0, 0, 1));
 	world->AddGameObject(mazeGuard);
 }
 

@@ -277,8 +277,8 @@ void NCL::CSC8503::TutorialGame::HandleCameraLock() {
 		Vector3 angles = q.ToEuler(); //nearly there now!
 
 		world->GetMainCamera().SetPosition(camPos);
-		//world->GetMainCamera().SetPitch(angles.x);
-		//world->GetMainCamera().SetYaw(angles.y);
+		world->GetMainCamera().SetPitch(angles.x);
+		world->GetMainCamera().SetYaw(angles.y);
 	}
 }
 

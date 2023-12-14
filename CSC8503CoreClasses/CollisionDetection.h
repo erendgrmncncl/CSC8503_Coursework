@@ -105,15 +105,20 @@ namespace NCL {
 		static bool OBBIntersection(	const OBBVolume& volumeA, const Transform& worldTransformA,
 										const OBBVolume& volumeB, const Transform& worldTransformB, CollisionInfo& collisionInfo);
 
-		static bool CapsuleIntersection( const OBBVolume& volumeA, const Transform& worldTransformA,
-			                             const OBBVolume& volumeB, const Transform& worldTransformB, CollisionInfo& collisionInfo);
-
+		static bool CapsuleIntersection( const CapsuleVolume& volumeA, const Transform& worldTransformA,
+			                             const CapsuleVolume& volumeB, const Transform& worldTransformB, CollisionInfo& collisionInfo);
 
 		static bool OBBSphereIntersection(const OBBVolume& volumeA, const Transform& worldTransformA,
 			const SphereVolume& volumeB, const Transform& worldTransformB, CollisionInfo& collisionInfo);
 
-
+		static bool AABBToOBBIntersection(const OBBVolume& volumeA, const Transform& worldTransformA,
+			const AABBVolume& volumeB, const Transform& worldTransformB, CollisionInfo& collisionInfo);
+		
+		static std::vector<Vector3> GetEdgeNormals(const Quaternion& orientationA, const Quaternion& orientationB);
+		static std::vector<Vector3> GetOBBVertices(const OBBVolume& volume, const Vector3& position, const Quaternion& orientation);
 		static Vector3 Unproject(const Vector3& screenPos, const PerspectiveCamera& cam);
+
+		static Vector3 CalculateWorldOrientation(const Transform& worldTransform, const Vector3& localDirection);
 
 		static Vector3		UnprojectScreenPosition(Vector3 position, float aspect, float fov, const PerspectiveCamera&c);
 		static Matrix4		GenerateInverseProjection(float aspect, float fov, float nearPlane, float farPlane);

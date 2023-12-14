@@ -12,6 +12,7 @@ namespace NCL {
 			Vector3		position;
 			Quaternion	orientation;
 			int			stateID;
+			bool        removeObj = false;
 		};
 	}
 }

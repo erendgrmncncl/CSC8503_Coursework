@@ -137,12 +137,12 @@ void DisplayPathfinding() {
 void TestStateMachine() {
 	StateMachine* testMachine = new StateMachine();
 	int data = 0;
-	State* A = new State([&](float dt)->void {
+	State* A = new State([&](float dt, StateGameObject* obj)->void {
 		std::cout << "I'm in state A\n";
 		data++;
 		});
 
-	State* B = new State([&](float dt)-> void {
+	State* B = new State([&](float dt, StateGameObject* obj)-> void {
 		std::cout << "I'm in state B! \n";
 		data--;
 		});
@@ -206,7 +206,7 @@ hide or show the
 
 */
 int main() {
-	Window* w = Window::CreateGameWindow("CSC8503 Game technology!", 1280, 720);
+	Window* w = Window::CreateGameWindow("CSC8503 Game technology!", 1366, 768, false);
 	//TestNetworking();
 	//TestPushdownAutomata(w);
 

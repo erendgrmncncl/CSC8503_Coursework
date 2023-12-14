@@ -114,6 +114,9 @@ namespace NCL::CSC8503 {
 		bool GetIsAffectedByGravity() const;
 		void SetIsAffectedByGravity(bool isAffectedByGravity);
 
+		bool GetIsInteractable() const;
+		void SetIsInteractable(bool val);
+
 		GameObject* getNextObjectInDirection(const GameWorld& world, Vector3 direction);
 
 	protected:
@@ -131,6 +134,7 @@ namespace NCL::CSC8503 {
 		bool		isActive;
 		bool        isAffectedByGravity = true;
 		bool		isAttached = false;
+		bool        isInteractable = true;
 		int			worldID;
 		std::string	name;
 

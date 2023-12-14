@@ -44,7 +44,17 @@ namespace NCL {
 				return colour;
 			}
 
+			bool GetVisibility() const {
+				return isVisible;
+			}
+
+			void SetVisibility(bool isVisible) {
+				this->isVisible = isVisible;
+			}
+
 		protected:
+			bool isVisible = true;
+
 			Mesh*		mesh;
 			Texture*	texture;
 			Shader*		shader;

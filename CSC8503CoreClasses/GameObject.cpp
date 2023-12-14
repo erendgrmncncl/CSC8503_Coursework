@@ -93,3 +93,11 @@ void GameObject::SetIsAffectedByGravity(bool isAffectedByGravity) {
 void GameObject::SetCollisionCallback(std::function<void()> callback) {
 	this->collisionCallback = callback;
 }
+
+void GameObject::SetIsInteractable(bool val) {
+	this->isInteractable = val;
+}
+
+bool GameObject::GetIsInteractable() const {
+	return isInteractable;
+}

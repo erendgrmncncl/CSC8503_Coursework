@@ -34,42 +34,43 @@ void NCL::CSC8503::Player::HandlePlayerControls(float dt, GameWorld& world) {
 	const Keyboard& keyboard = *Window::GetWindow()->GetKeyboard();
 	const Mouse& mouse = *Window::GetMouse();
 	HandleHeldObjObject();
-	////rotate obj
 
-	//auto camera = world.GetMainCamera();
-	//auto& controller = camera.GetActiveController();
-	//auto newOrientation = transform.GetOrientation();
-	////Update the mouse by how much
-	//float axisVal = controller.GetNamedAxis("XLook");
-	//float xAxisVal = controller.GetNamedAxis("YLook");
-
-	//float rotateValue = axisVal * dt * 100.f;
-	//float xRotateValue = xAxisVal * dt * 100.f;
-
-	//float newVal = newOrientation.y - rotateValue;	
-	//float xNewVal = newOrientation.x - xRotateValue;
-	//newOrientation.y = newVal;
-
-	//transform.SetOrientation(newOrientation);
-
-	//// rotate obj
-
-	Vector3 newPos = transform.GetPosition();
+	Quaternion playerOrientation = transform.GetOrientation();
 	if (keyboard.KeyDown(NCL::KeyCodes::A)) {
-		newPos.x -= 1 * speed * dt;
+		Vector3 forwardDirection = playerOrientation * Vector3(-1, 0, 0);
+		forwardDirection.Normalise();
 
+		float forceMagnitude = 1.0f;
+		physicsObject->AddForce(forwardDirection * forceMagnitude);
 	}
 	if (keyboard.KeyDown(NCL::KeyCodes::D)) {
-		newPos.x += 1 * speed * dt;
-	}
+		Vector3 forwardDirection = playerOrientation * Vector3(1, 0, 0);
+		forwardDirection.Normalise();
 
+		float forceMagnitude = 1.0f;
+		physicsObject->AddForce(forwardDirection * forceMagnitude);
+	}
 	if (keyboard.KeyDown(NCL::KeyCodes::W)) {
-		newPos.z += -1 * speed * dt;
+		Vector3 forwardDirection = playerOrientation * Vector3(0, 0, -1);
+
+		forwardDirection.Normalise();
+
+		float forceMagnitude = 1.0f;
+		physicsObject->AddForce(forwardDirection * forceMagnitude);
 	}
 	if (keyboard.KeyDown(NCL::KeyCodes::S)) {
-		newPos.z += 1 * speed * dt;
+		
+		Vector3 forwardDirection = playerOrientation * Vector3(0, 0, 1);
+
+		forwardDirection.Normalise();
+
+		float forceMagnitude = 1.0f;
+		physicsObject->AddForce(forwardDirection * forceMagnitude);
 	}
-	transform.SetPosition(newPos);
+	if (keyboard.KeyPressed(NCL::KeyCodes::SPACE)){
+		physicsObject->AddForce(Vector3(0, 10, 0 ));
+	}
+
 	if (keyboard.KeyPressed(NCL::KeyCodes::E)) {
 		PickUpObject(world);
 	}
@@ -102,11 +103,10 @@ void NCL::CSC8503::Player::PickUpObject(GameWorld& world) {
 			collidedObj->GetPhysicsObject()->ClearForces();
 			collidedObj->SetIsAffectedByGravity(false);
 			heldObj->GetRenderObject()->SetColour(Vector4(0, 1, 1, 1));
-
+			heldObj->SetIsInteractable(false);
 			if (heldObj->GetGameObjectType() == GameObjectType::Objective) {
 				auto* gameScene = (Coursework*)SceneManager::GetSceneManager()->GetCurrentScene();
-				if (gameScene != nullptr)
-				{
+				if (gameScene != nullptr) {
 					gameScene->CollectObjective(heldObj);
 					heldObj = nullptr;
 				}
@@ -128,10 +128,12 @@ void NCL::CSC8503::Player::HandleHeldObjObject() {
 
 void NCL::CSC8503::Player::ThrowObject(GameWorld& world) {
 	Vector3 pos = CollisionDetection::GetCameraVec(world.GetMainCamera());
-	float power = 500.f;
+	float power = 1000.f;
 
 	heldObj->GetPhysicsObject()->AddForce(pos * power);
+	heldObj->GetRenderObject()->SetColour(Vector4(1, 1, 0, 1));
 	heldObj->SetIsAffectedByGravity(true);
+	heldObj->SetIsInteractable(true);
 	heldObj = nullptr;
 }
  

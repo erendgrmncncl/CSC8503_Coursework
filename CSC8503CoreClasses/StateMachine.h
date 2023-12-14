@@ -4,13 +4,14 @@ namespace NCL {
 	namespace CSC8503 {
 		class State;
 		class StateTransition;
+		class StateGameObject;
 
 		typedef std::multimap<State*, StateTransition*> TransitionContainer;
 		typedef TransitionContainer::iterator TransitionIterator;
 
 		class StateMachine	{
 		public:
-			StateMachine();
+			StateMachine(StateGameObject* stateGameObject = nullptr);
 			virtual ~StateMachine(); //made it virtual!
 
 			void AddState(State* s);
@@ -20,6 +21,8 @@ namespace NCL {
 
 		protected:
 			State * activeState;
+
+			StateGameObject* stateObj = nullptr;
 
 			std::vector<State*> allStates;
 			TransitionContainer allTransitions;
