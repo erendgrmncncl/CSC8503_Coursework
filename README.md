@@ -13,4 +13,4 @@ The coursework focuses on developing a 3D game incorporating physics, networking
 
 ### Video Link
 
-[Link To Coursework Demo](https://youtu.be/kJccCICLs4A)
+[Coursework Demo Link](https://youtu.be/kJccCICLs4A)
